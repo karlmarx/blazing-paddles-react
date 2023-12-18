@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.0a81c910.css",
-    "main.js": "/static/js/main.683a742f.js",
-    "static/js/787.37accb3d.chunk.js": "/static/js/787.37accb3d.chunk.js",
-    "static/media/logoblazingpaddles.jpg": "/static/media/logoblazingpaddles.8d4196d35bdc0c0b040e.jpg",
+    "main.css": "/static/css/main.c1b5e597.css",
+    "main.js": "/static/js/main.f56fe684.js",
+    "static/js/937.06562a3f.chunk.js": "/static/js/937.06562a3f.chunk.js",
+    "static/media/wiltonManors.jpg": "/static/media/wiltonManors.f7cc203f9918c95ef0c6.jpg",
+    "static/media/teamPic.jpg": "/static/media/teamPic.e281f87a61ce2615d64d.jpg",
+    "static/media/ccnc.jpg": "/static/media/ccnc.8e8458c20ce332e7d7dd.jpg",
+    "static/media/nishPic.jpg": "/static/media/nishPic.ff9c7e0dbafcee52d296.jpg",
+    "static/media/gardenOfLife.jpg": "/static/media/gardenOfLife.b2773136092d1a4b26d4.jpg",
     "index.html": "/index.html",
-    "main.0a81c910.css.map": "/static/css/main.0a81c910.css.map",
-    "main.683a742f.js.map": "/static/js/main.683a742f.js.map",
-    "787.37accb3d.chunk.js.map": "/static/js/787.37accb3d.chunk.js.map"
+    "main.c1b5e597.css.map": "/static/css/main.c1b5e597.css.map",
+    "main.f56fe684.js.map": "/static/js/main.f56fe684.js.map",
+    "937.06562a3f.chunk.js.map": "/static/js/937.06562a3f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a81c910.css",
-    "static/js/main.683a742f.js"
+    "static/css/main.c1b5e597.css",
+    "static/js/main.f56fe684.js"
   ]
 }
