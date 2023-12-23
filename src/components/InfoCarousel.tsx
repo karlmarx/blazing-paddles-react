@@ -8,16 +8,25 @@ import nishPic from "../assets/images/nishPic.jpg";
 
 export default function  InfoCarousel() {
     return (
-        // <div className="!relative min-h-screen w-full  bg-cover bg-no-repeat">
-        //     <div className="absolute inset-0 h-screen w-full bg-gray-900/70" />
-        <Carousel className="rounded-xl h-screen"
+        // <section className="py-4 px-8 lg:py-10">
+        //  <div className=" container mx-auto">
+        // <section className="p-8">
+        //     <div className="max-w-screen-xl mx-auto">
+        // <div className="w-full lg:container lg:mx-auto">
+        <section className="py-8 px-8 lg:py-20">
+            <div className="container mx-auto">
+                {/*<div className="rounded-xl bg-gray-900 bg-gradient-to-tr py-24 px-10">*/}
+                    <Carousel className="rounded-xl
+                    bg-gray-900
+                    bg-gradient-to-t
+"
                   // autoplay={true}
                   loop={true} autoplayDelay={3000}>
-            <div className=" h-full w-full">
+            <div className="relative h-full w-full">
                 <img
                     src={teamPic}
                     alt="teamPic"
-                    className="h-full w-full"
+                    className="h-full w-full   object-cover"
                 />
                 <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/70 ">
                     <div className="w-3/4 text-center md:w-2/4">
@@ -26,14 +35,14 @@ export default function  InfoCarousel() {
                             color="white"
                             className="mb-4 text-3xl md:text-4xl lg:text-5xl"
                         >
-                            Blazing Paddles
+                            Paddle or Be Paddled
                         </Typography>
                         <Typography
                             variant="lead"
                             color="white"
                             className="mb-12 opacity-80 "
                         >
-                            Blazing Paddles is a Coed Dragon Boat team, with members of all ages and from every walk of life. We are located in BrowardCounty, Florida, and practice year-round in Hollywood, FL. We strive to be our best, and the team has won many championships, including the IDBF Community Division World Championship; its members have set (and still hold) a dragon boat racing world record; and several have paddled in IDBF and ICF World Championships.  But what really sets us apart is that we have fun doing it and we like teaching new paddlers. Come on out and join us.  No experience needed, just a great attitude! With a team motto, “Paddle or Be Paddled,” you’re sure to have a good time.
+                            Blazing Paddles is a Dragon Boat team with members of all ages and from every walk of life. We are located in Broward County, Florida, and practice year-round in Hollywood, FL. What really sets us apart is that we have fun doing it and we like teaching new paddlers: No experience needed!
                         </Typography>
                         <div className="flex justify-center gap-2">
                             <Button size="lg" color="white">
@@ -133,9 +142,9 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80 text-2xl lg:text-4xl"
+                            className="mb-12 opacity-80"
                         >
-                            TODO: THIS IS OUTDATED
+                            TODO: UPDATE THIS OUTDATED INFO AND SHORTEN IT
                             Blazing Paddles has secured the Wilton Manors Island City Canoe Race Coed Division
                             Championship since the race’s creation in 2001, 15 times. Our coed team was the overall
                             winner (beating the men’s teams) in 2006, 2007, 2009, 2010, 2012, 2013 and 2015. Our women’s
@@ -163,19 +172,19 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="h1"
                             color="white"
-                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                            className="mb-4"
                         >
                             Garden of Life
                         </Typography>
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80"
+                            className="opacity-80"
                         >
                             Garden of Life is a proud sponsor of Blazing Paddles. They are a certified B-Corp and make
                             wide variety of excellent, organic, non-GMO products.
                         </Typography>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 invisible md:visible">
                             <Button size="lg" color="white">
                                 Garden of Life
                             </Button>
@@ -187,6 +196,8 @@ export default function  InfoCarousel() {
                 </div>
             </div>
         </Carousel>
-        // </div>
+                {/*</div>*/}
+        </div>
+</section>
     );
 }
