@@ -6,9 +6,9 @@ module.exports = withMT({
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    // fontFamily: {
-      // sans: ["Open Sans", "sans-serif"],
-    // },
+    fontFamily: {
+      pirata: ["Pirata One", "swap"],
+    },
     extend: {},
   },
   plugins: [],

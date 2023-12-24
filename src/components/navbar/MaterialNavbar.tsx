@@ -32,7 +32,8 @@ import {
     GiftIcon,
     ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 // profile menu component
 const profileMenuItems = [
     {
@@ -295,7 +296,7 @@ const navListItems = [
     },
     {
         label: "Events",
-        link: "events",
+        link: "rvents",
         icon: CalendarDaysIcon,
     },
     {
@@ -312,7 +313,7 @@ const navListItems = [
 
 function NavList() {
     return (
-        <ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
+        <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
             <NavListMenu />
             <TeamNavListMenu />
             {navListItems.map(({ label, link, icon }, key) => (
@@ -331,21 +332,17 @@ function NavList() {
                 </Typography>
             ))}
             {/*<MenuItem className="relative flex w-full gap-2 md:w-max">*/}
-            {/*  <Button*/}
-            {/*    variant="gradient"*/}
-            {/*    size="sm"*/}
-            {/*    fullWidth*/}
-            {/*    className="flex items-center gap-3 lg:ml-auto"*/}
-            {/*    // flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto*/}
-            {/*  >*/}
-            {/*    <span>Try Dragonboat</span>*/}
-            {/*  </Button>*/}
+            {/*    <IconButton variant="text" size="md">*/}
+            {/*        /!*<i className="fa-brands fa-instagram text-base" />*!/*/}
+            {/*        <FontAwesomeIcon icon={faInstagram}  size="lg" />*/}
+            {/*        /!*<i className="fa-brands fa-instagram"></i>*!/*/}
+            {/*    </IconButton>*/}
             {/*</MenuItem>*/}
         </ul>
     );
 }
 
-export default function MaterialNavbar2() {
+export const MaterialNavbar = () => {
     const [isNavOpen, setIsNavOpen] = React.useState(false);
 
     const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
@@ -358,25 +355,23 @@ export default function MaterialNavbar2() {
     }, []);
 
     return (
-        <div className="-m-6 max-h-[768px] w-[calc(100%+48px)] overflow-scroll">
-            <Navbar color="transparent" fullWidth>
-                <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        {/*<Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">*/}
-        {/*    <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">*/}
+        // <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
+        <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+            <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">
                 {/*<div className="flex flex-wrap items-center justify-between gap-y-4 ">*/}
                 <Typography
                     as="a"
                     href="/"
-                    className="mr-4 cursor-pointer"
+                    className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata"
                 >
                     Blazing Paddles
                 </Typography>
-                {/*<div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">*/}
-                <div className="hidden lg:block">
+                <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
                     {/*<div className="flex items-center gap-4">*/}
                     {/*<div className="hidden lg:block">*/}
                     <NavList />
                 </div>
+
 
                 {/*<div className="relative flex w-full gap-2 md:w-max">*/}
                 <a href="try">
@@ -410,6 +405,5 @@ export default function MaterialNavbar2() {
                 <NavList />
             </MobileNav>
         </Navbar>
-        </div>
     );
 }

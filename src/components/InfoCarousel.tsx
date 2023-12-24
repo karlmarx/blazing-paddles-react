@@ -14,7 +14,8 @@ export default function  InfoCarousel() {
         //     <div className="max-w-screen-xl mx-auto">
         // <div className="w-full lg:container lg:mx-auto">
         <section className="py-8 px-8 lg:py-20">
-            <div className="container mx-auto">
+            <div className="container mx-auto h-[80vh]">
+            {/*<div className="container mx-auto min-h-[100vh]">*/}
                 {/*<div className="rounded-xl bg-gray-900 bg-gradient-to-tr py-24 px-10">*/}
                     <Carousel className="rounded-xl
                     bg-gray-900
@@ -75,15 +76,15 @@ export default function  InfoCarousel() {
                             color="white"
                             className="mb-12 opacity-80"
                         >
+                            TODO: shorten
                             Blazing Paddles sent out two crews for the 2021 Club Crew National Championships at Sarasota, Orlando in  October 1-3, 2021: Senior B and Senior C Small Boat.
-                            Day 1 is 200m, the pirates both got a bronze medal! Day 2 is 500m where Senior C took home a bronze medal and Senior B had to do a re-run of the 500m and the pirates placed 3rd! Day 3 2000m where BP Senior C placed 3rd and BP Senior B in 5th place.
-                            Congratulations to all the teams that participated and earned their berth for the to the 2022 IDBF Club Crew World Championships!
+                            Day 1 is 200m, the pirates both got a bronze medal...
                         </Typography>
                         <div className="flex  justify-center gap-2">
                             <Button size="lg" color="white">
                                 Join Us
                             </Button>
-                            <Button size="lg" color="white">
+                            <Button size="lg" color="white" variant="text">
                                 Gallery
                             </Button>
                         </div>
@@ -130,7 +131,7 @@ export default function  InfoCarousel() {
                     alt="wiltonManors"
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
+                <div className="absolute inset-0 grid h-full w-full items-end bg-black/70">
                     <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
                         <Typography
                             variant="h1"
@@ -146,9 +147,7 @@ export default function  InfoCarousel() {
                         >
                             TODO: UPDATE THIS OUTDATED INFO AND SHORTEN IT
                             Blazing Paddles has secured the Wilton Manors Island City Canoe Race Coed Division
-                            Championship since the race’s creation in 2001, 15 times. Our coed team was the overall
-                            winner (beating the men’s teams) in 2006, 2007, 2009, 2010, 2012, 2013 and 2015. Our women’s
-                            crew has entered their division twice, taking first place on both occasions.
+                            Championship since the race’s creation in 2001...
                         </Typography>
                         <div className="flex gap-2">
                             <Button size="lg" color="white">
@@ -179,12 +178,12 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="lead"
                             color="white"
-                            className="opacity-80"
+                            className="mb-12 opacity-80"
                         >
                             Garden of Life is a proud sponsor of Blazing Paddles. They are a certified B-Corp and make
                             wide variety of excellent, organic, non-GMO products.
                         </Typography>
-                        <div className="flex gap-2 invisible md:visible">
+                        <div className="flex gap-2">
                             <Button size="lg" color="white">
                                 Garden of Life
                             </Button>
@@ -196,7 +195,6 @@ export default function  InfoCarousel() {
                 </div>
             </div>
         </Carousel>
-                {/*</div>*/}
         </div>
 </section>
     );

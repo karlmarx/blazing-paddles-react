@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "@material-tailwind/react";
 import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "./dev";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -237,14 +236,14 @@ const customTheme = {
 
 root.render(
     <React.StrictMode>
+
         <ThemeProvider value={customTheme}>
 
-            <DevSupport ComponentPreviews={ComponentPreviews}
-                        useInitialHook={useInitial}
-            >
                 <App/>
-            </DevSupport>
-        </ThemeProvider> </React.StrictMode>
+
+        </ThemeProvider>
+
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
