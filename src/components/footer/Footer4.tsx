@@ -1,4 +1,5 @@
 import { IconButton, Typography } from "@material-tailwind/react";
+import logo from "../../assets/images/logoblazingpaddles.jpg";
 
 const links = [
     {
@@ -20,6 +21,16 @@ const links = [
 ];
 
 const currentYear = new Date().getFullYear();
+export function CircularLogo() {
+    return (
+        <img
+            className="h-52 w-52 rounded-full object-cover object-center mb-6"
+            src={logo}
+            alt="bp logo"
+        />
+    );
+}
+
 
 export const Footer4 = () => {
     return (
@@ -32,7 +43,7 @@ export const Footer4 = () => {
                             BLAZING PADDLES
                         </Typography>
                         <Typography color="white" className="mb-4 w-10/12 text-base font-normal  md:w-5/12 ">
-                            South Florida's Dragon Boat and Canoe Team
+                            Dragon Boat and Canoe Team based in South Florida
                         </Typography>
                         <div className="flex gap-1">
                             <IconButton variant="text" size="sm" color="white">
@@ -76,8 +87,11 @@ export const Footer4 = () => {
                         color="blue-gray"
                         className="text-center font-normal !text-gray-700"
                     >
-                        All rights reserved. &copy; {currentYear} Material Tailwind
+                        All rights reserved. &copy; {currentYear} Blazing Paddles
                     </Typography>
+                </div>
+                <div className="mt-3 flex flex-wrap justify-center py-6 md:justify-center">
+           <CircularLogo/>
                 </div>
             </div>
         </footer>

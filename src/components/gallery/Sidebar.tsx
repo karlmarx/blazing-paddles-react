@@ -15,12 +15,7 @@ import {
 import logo from "../../assets/images/logoblazingpaddles.jpg";
 
 import {
-    PresentationChartBarIcon,
-    ShoppingBagIcon,
-    UserCircleIcon,
-    Cog6ToothIcon,
-    InboxIcon,
-    PowerIcon,
+   PhotoIcon
 } from "@heroicons/react/24/solid";
 import {
     ChevronRightIcon,
@@ -112,7 +107,7 @@ export function Sidebar() {
                     <ListItem onClick={(e) => { // @ts-ignore
                         updateImages(e, images)}} >
                         <ListItemPrefix>
-                            <UserCircleIcon className="h-5 w-5" />
+                            <PhotoIcon className="h-5 w-5" />
                         </ListItemPrefix>
                         {name}
                     </ListItem>

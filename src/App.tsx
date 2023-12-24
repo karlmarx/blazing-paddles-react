@@ -3,17 +3,18 @@ import "./App.css";
 import "./index.css";
 import { Typography } from "@material-tailwind/react";
 import logo from "./assets/images/logoblazingpaddles.jpg"; // with import
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, HashRouter } from "react-router-dom";
 import {Home} from "./components/Home";
 import InfoCarousel from "./components/InfoCarousel";
 import {Error404} from "./components/Error404";
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import {Footer, Footer4} from "./components/footer";
+import {Footer4} from "./components/footer";
 import {MaterialNavbar} from "./components/navbar";
 import DefaultCarousel from "./components/DefaultCarousel";
 import {Galleries} from "./components/gallery/Galleries";
+import ContactUs from "./components/contact/ContactUs";
 
 library.add( faInstagram)
 
@@ -30,7 +31,8 @@ function App() {
       >
 
 
-          <Router basename={`/${process.env.PUBLIC_URL}`}>
+          {/*<Router basename={process.env.PUBLIC_URL}>*/}
+          <HashRouter>
               {/*<div className="flex flex-col">*/}
               {/*<div className="flex-none">*/}
           <MaterialNavbar />
@@ -40,13 +42,15 @@ function App() {
                   <Route  path="/" element={<Home/>} />
                   <Route path="/about" element={<Home/>} />
                   <Route path="/gallery" element={<Galleries/>} />
+                  <Route path="/contact" element={<ContactUs/>} />
+
                   <Route  path="*" element={<InfoCarousel/>} />
 
 
 
               </Routes>
               <Footer4/>
-          </Router>
+          </HashRouter>
 
       </div>
 

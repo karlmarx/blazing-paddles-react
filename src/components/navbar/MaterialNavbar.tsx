@@ -32,9 +32,16 @@ import {
     GiftIcon,
     ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-// profile menu component
+import logo from "../../assets/images/logoblazingpaddles.jpg";
+function CircularLogo() {
+    return (
+        <img
+            className="h-12 w-12 rounded-full object-cover object-center mb-6"
+            src={logo}
+            alt="bp logo"
+        />
+    );
+}
 const profileMenuItems = [
     {
         label: "My Profile",
@@ -145,7 +152,7 @@ function NavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const renderItems = navListMenuItems.map(({ title, link, description }) => (
-        <a href={link} key={title}>
+        <a href={`#/${link}`} key={title}>
             <MenuItem>
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                     {title}
@@ -229,7 +236,7 @@ function TeamNavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const renderItems = teamNavListMenuItems.map(({ title, link, description }) => (
-        <a href="link" key={title}>
+        <a href={`#/${link}`} key={title}>
             <MenuItem>
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                     {title}
@@ -296,7 +303,7 @@ const navListItems = [
     },
     {
         label: "Events",
-        link: "rvents",
+        link: "events",
         icon: CalendarDaysIcon,
     },
     {
@@ -320,7 +327,7 @@ function NavList() {
                 <Typography
                     key={label}
                     as="a"
-                    href={link}
+                    href={`#/${link}`}
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
@@ -359,11 +366,13 @@ export const MaterialNavbar = () => {
         <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
             <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">
                 {/*<div className="flex flex-wrap items-center justify-between gap-y-4 ">*/}
+
                 <Typography
                     as="a"
                     href="/"
-                    className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata"
+                    className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata text-3xl"
                 >
+
                     Blazing Paddles
                 </Typography>
                 <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeProvider} from "@material-tailwind/react";
 import {DevSupport} from "@react-buddy/ide-toolbox";
+import { createHashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -233,7 +234,12 @@ const customTheme = {
         },
     },
 };
-
+const router = createHashRouter([
+    {
+        path: "/*",
+        element: <App />,
+    }
+]);
 root.render(
     <React.StrictMode>
 
