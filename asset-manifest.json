@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6fc82828.css",
-    "main.js": "/static/js/main.4de83c1b.js",
+    "main.css": "/static/css/main.3be9ced4.css",
+    "main.js": "/static/js/main.96465ef3.js",
     "static/media/9878694_orig.jpg": "/static/media/9878694_orig.db44b6df23222a541d63.jpg",
     "static/media/4298817_orig.jpg": "/static/media/4298817_orig.fe1dc9600b2ba056fa3b.jpg",
     "static/media/8388052_orig.jpg": "/static/media/8388052_orig.2d5ebd5d9d53f1c1ab96.jpg",
@@ -119,6 +119,7 @@
     "static/media/nishPic.jpg": "/static/media/nishPic.ff9c7e0dbafcee52d296.jpg",
     "static/media/350377064-792516908858871--n_orig.jpg": "/static/media/350377064-792516908858871-7708437872443224687-n_orig.35833c651d88cda08634.jpg",
     "static/media/gol2_1_orig.jpeg": "/static/media/gol2_1_orig.529c21086c8b8fa69a7c.jpeg",
+    "static/media/flct.jpg": "/static/media/flct.cba292999d0057a763d4.jpg",
     "static/media/gol1_1_orig.jpeg": "/static/media/gol1_1_orig.df53d25a6a5c94938b81.jpeg",
     "static/media/gol6_1_orig.jpeg": "/static/media/gol6_1_orig.a17fbfb7e1fc7656a02e.jpeg",
     "static/media/gol10_1_orig.jpeg": "/static/media/gol10_1_orig.8331bcd337faae99ca24.jpeg",
@@ -133,11 +134,11 @@
     "static/media/6849218_orig.jpg": "/static/media/6849218_orig.d609168ce443825eaf4c.jpg",
     "static/media/logoblazingpaddles.jpg": "/static/media/logoblazingpaddles.8d4196d35bdc0c0b040e.jpg",
     "index.html": "/index.html",
-    "main.6fc82828.css.map": "/static/css/main.6fc82828.css.map",
-    "main.4de83c1b.js.map": "/static/js/main.4de83c1b.js.map"
+    "main.3be9ced4.css.map": "/static/css/main.3be9ced4.css.map",
+    "main.96465ef3.js.map": "/static/js/main.96465ef3.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fc82828.css",
-    "static/js/main.4de83c1b.js"
+    "static/css/main.3be9ced4.css",
+    "static/js/main.96465ef3.js"
   ]
 }
