@@ -3,12 +3,12 @@ import logo from "../../assets/images/logoblazingpaddles.jpg";
 
 const links = [
     {
-        title: "Paddling",
-        items: ["Dragon Boat", "Canoe", "Outrigger Canoe" ],
+        title: "Team",
+        items: ["About Us", "Community Service", "Awards", "Join Us"],
     },
     {
-        title: "Team",
-        items: ["About Us", "Service", "Awards", "Join Us"],
+        title: "Paddling",
+        items: ["Dragon Boat", "Canoe", "Outrigger Canoe" ],
     },
     {
         title: "Info",
@@ -21,7 +21,7 @@ const links = [
 ];
 
 const currentYear = new Date().getFullYear();
-export function CircularLogo() {
+function CircularLogo() {
     return (
         <img
             className="h-52 w-52 rounded-full object-cover object-center mb-6"
@@ -32,7 +32,7 @@ export function CircularLogo() {
 }
 
 
-export const Footer4 = () => {
+ export const Footer = () => {
     return (
         // <footer className="mt-10 px-8 pt-20">
          <footer className="mt-10 bg-gradient-to-tr from-gray-900 to-gray-800 px-8 pt-20">
@@ -97,4 +97,3 @@ export const Footer4 = () => {
         </footer>
     );
 }
-

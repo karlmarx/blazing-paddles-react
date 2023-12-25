@@ -10,11 +10,12 @@ import {Error404} from "./components/Error404";
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import {Footer4} from "./components/footer";
+import {Footer} from "./components/footer/Footer";
 import {MaterialNavbar} from "./components/navbar";
-import DefaultCarousel from "./components/DefaultCarousel";
 import {Galleries} from "./components/gallery/Galleries";
 import ContactUs from "./components/contact/ContactUs";
+import {Service} from "./components/service/Service";
+import {LightboxGallery} from "./components/gallery/LightboxGallery";
 
 library.add( faInstagram)
 // function redirect(url) {
@@ -44,16 +45,17 @@ function App() {
               <Routes>
                   <Route  path="/" element={<Home/>} />
                   <Route path="/about" element={<Home/>} />
-                  <Route path="/gallery" element={<Galleries/>} />
+                  <Route path="/gallery" element={<LightboxGallery/>} />
                   <Route path="/contact" element={<ContactUs/>} />
                   <Route path="/location" element={<Navigate to="https://maps.app.goo.gl/PqU2XyAgU3kZPM6C6" replace={true} relative={"path"}/>} />
+                  <Route path="/service" element={<Service/>} />
 
                   <Route  path="*" element={<InfoCarousel/>} />
 
 
 
               </Routes>
-              <Footer4/>
+              <Footer/>
           </HashRouter>
 
       </div>
