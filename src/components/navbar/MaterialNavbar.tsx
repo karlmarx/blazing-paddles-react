@@ -31,6 +31,8 @@ import {
     MapPinIcon,
     GiftIcon,
     ChatBubbleLeftRightIcon,
+    QuestionMarkCircleIcon,
+    InformationCircleIcon,
 } from "@heroicons/react/24/outline";
 import logo from "../../assets/images/logoblazingpaddles.jpg";
 function CircularLogo() {
@@ -130,19 +132,19 @@ function ProfileMenu() {
 const navListMenuItems = [
     {
         title: "Dragonboat",
-        link: "dragonboat",
+        link: "#/dragonboat",
         description:
             "Learn how to use @material-tailwind/react, packed with rich components for React.",
     },
     {
         title: "Outrigger Canoe",
-        link: "oc",
+        link: "#/oc",
         description:
             "A complete set of UI Elements for building faster websites in less time.",
     },
     {
         title: "Canoe",
-        link: "canoe",
+        link: "#/canoe",
         description:
             "A complete set of UI Elements for building faster websites in less time.",
     },
@@ -152,7 +154,7 @@ function NavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const renderItems = navListMenuItems.map(({ title, link, description }) => (
-        <a href={`#/${link}`} key={title}>
+        <a href={link} key={title}>
             <MenuItem>
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                     {title}
@@ -209,25 +211,25 @@ function NavListMenu() {
 const teamNavListMenuItems = [
     {
         title: "About Us",
-        link: "about",
+        link: "#/about",
         description:
             "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
     },
     {
         title: "Community Service",
-        link: "community",
+        link: "#/community",
         description:
             "Learn how to use @material-tailwind/react, packed with rich components for React.",
     },
     {
         title: "Awards and Recognition",
-        link: "awards",
+        link: "#/awards",
         description:
             "A complete set of UI Elements for building faster websites in less time.",
     },
     // {
     //     title: "Canoe",
-    //     link: "canoe",
+    //     link: "#/canoe",
     //     description:
     //         "A complete set of UI Elements for building faster websites in less time.",
     // },
@@ -236,7 +238,7 @@ function TeamNavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const renderItems = teamNavListMenuItems.map(({ title, link, description }) => (
-        <a href={`#/${link}`} key={title}>
+        <a href={link} key={title}>
             <MenuItem>
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                     {title}
@@ -293,28 +295,33 @@ function TeamNavListMenu() {
 const navListItems = [
     {
         label: "Gallery",
-        link: "gallery",
+        link: "#/gallery",
         icon: PhotoIcon,
     },
     {
         label: "Location",
-        link: "location",
+        link: "https://maps.app.goo.gl/PqU2XyAgU3kZPM6C6",
         icon: MapPinIcon,
     },
     {
         label: "Events",
-        link: "events",
+        link: "#/events",
         icon: CalendarDaysIcon,
     },
     {
         label: "Donate",
-        link: "donate",
+        link: "#/donate",
         icon: GiftIcon,
     },
     {
-        label: "Contact",
-        link: "contact",
+        label: "Sign-Up",
+        link: "#/contact",
         icon: ChatBubbleLeftRightIcon,
+    },
+    {
+        label: "FAQ",
+        link: "#/faq",
+        icon: InformationCircleIcon ,
     },
 ];
 
@@ -327,7 +334,7 @@ function NavList() {
                 <Typography
                     key={label}
                     as="a"
-                    href={`#/${link}`}
+                    href={link}
                     variant="small"
                     color="blue-gray"
                     className="font-normal"

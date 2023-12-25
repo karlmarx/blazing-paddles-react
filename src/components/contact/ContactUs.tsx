@@ -1,3 +1,4 @@
+import { ValidationError, useForm } from "@formspree/react";
 import { EnvelopeIcon, PhoneIcon, TicketIcon } from "@heroicons/react/24/solid";
 import {
     Button,
@@ -12,6 +13,12 @@ import type { InputProps } from "@material-tailwind/react";
 import type { InputStylesType } from "@material-tailwind/react";
 
 export default function ContactUs() {
+    const [state, handleSubmit] = useForm("xyyrgvnp");
+    if (state.succeeded) {
+        // TODO: replace with pop-up
+        return <p>Thanks for joining!</p>;
+    }
+
     return (
         <section className="p-10">
             <div className="flex w-full flex-col-reverse items-center gap-10 lg:flex-row">
@@ -23,50 +30,51 @@ export default function ContactUs() {
                                 color="blue-gray"
                                 className="mb-4 text-4xl lg:text-5xl"
                             >
-                                Say Hi!
+                                Dragon Boat Practice Sign-up
                             </Typography>
                             <Typography variant="lead" className="mb-16 !text-gray-500">
-                                Whether you have questions or you would just like to say hello,
-                                contact us.
+                                Beginner-friendly dragon boat practices take place on <b>Saturday</b> mornings at{' '}
+                                <b>8:15 a.m.</b> departing from the Holland Park Boat Ramp in Hollywood, Florida.{' '}
+                                Please fill out the information below to sign up and we will be in touch.
                             </Typography>
-                            <form action="#" className="flex flex-col gap-4">
-                                <Input crossOrigin={undefined} color="gray" size="lg" label="Name" name="name" />
+                            {/*TODO: confirmation pop-up with link to faq and waiver*/}
+
+                            <form
+                                onSubmit={handleSubmit}
+                                className="flex flex-col gap-4">
+                                <Input crossOrigin={undefined} color="gray" size="lg" label="Name" name="name" id="name" />
+                                <ValidationError
+                                    prefix="Name"
+                                    field="name"
+                                    errors={state.errors}
+                                />
                                 <Input crossOrigin={undefined}
                                     color="gray"
                                     type="email"
                                     size="lg"
                                     label="Email"
                                     name="email"
+                                       id="email"
+                                />
+                                <ValidationError
+                                    prefix="Email"
+                                    field="email"
+                                    errors={state.errors}
                                 />
                                 <Textarea
                                     color="gray"
                                     size="lg"
-                                    label="Message"
+                                    label="Questions/Concerns"
                                     name="message"
+                                    id="message"
                                 />
-                                <Checkbox
-                                    crossOrigin={undefined}
-                                    color="gray"
-                                    label={
-                                        (
-                                            <Typography className="font-normal !text-gray-500">
-                                                You agree to your friendly{" "}
-                                                <a
-                                                    href="#"
-                                                    className="font-medium text-gray-700 hover:text-gray-900"
-                                                >
-                                                    Privacy Policy
-                                                </a>
-                                                .
-                                            </Typography>
-                                        ) as any
-                                    }
-                                    containerProps={{
-                                        className: "-ml-2.5",
-                                    }}
+                                <ValidationError
+                                    prefix="Message"
+                                    field="message"
+                                    errors={state.errors}
                                 />
-                                <Button size="lg" color="gray" className="mt-6" fullWidth>
-                                    send message
+                                <Button type="submit" size="lg" color="gray" className="mt-6" fullWidth disabled={state.submitting}>
+                                    Submit
                                 </Button>
                             </form>
                         </div>
@@ -83,34 +91,21 @@ export default function ContactUs() {
                                 Contact Information
                             </Typography>
                             <Typography variant="lead" color="white" className="opacity-50">
-                                Fill up the form and our Team will get back to you within 24
-                                hours.
+                                You can also reach Captain 'Iron' Will Murphy by email or connect with the team on social media.
                             </Typography>
                             <div className="mt-16 grid gap-4">
                                 <div className="flex items-center gap-4">
-                                    <PhoneIcon className="h-6 w-6 text-white" />
-                                    <Typography className="font-bold !text-white">
-                                        +1(424) 535 3523
-                                    </Typography>
-                                </div>
-                                <div className="flex items-center gap-4">
                                     <EnvelopeIcon className="h-6 w-6 text-white" />
                                     <Typography className="font-bold !text-white">
-                                        hello@mail.com
-                                    </Typography>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <TicketIcon className="h-6 w-6 text-white" />
-                                    <Typography className="font-bold !text-white">
-                                        Open Support Ticket
+                                        WillMurphy@SOARteam.com
                                     </Typography>
                                 </div>
                             </div>
                             <div className="my-10 flex items-center gap-8">
-                                <i className="fa-brands fa-twitter text-xl text-white" />
-                                <i className="fa-brands fa-linkedin text-xl text-white" />
-                                <i className="fa-brands fa-dribbble text-xl text-white" />
+                                <i className="fa-brands fa-instagram text-xl text-white" />
+                                <i className="fa-brands fa-youtube text-xl text-white" />
                                 <i className="fa-brands fa-facebook text-xl text-white" />
+                                <i className="fa-brands fa-google text-xl text-white" />
                             </div>
                         </div>
                     </Card>

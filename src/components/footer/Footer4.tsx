@@ -12,7 +12,7 @@ const links = [
     },
     {
         title: "Info",
-        items: ["About", "Events", "Location"],
+        items: ["Events", "Location", "FAQ", "Waiver"],
     },
     {
         title: "Connect",

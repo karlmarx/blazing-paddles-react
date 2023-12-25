@@ -36,7 +36,7 @@ export default function  InfoCarousel() {
                             color="white"
                             className="mb-4 text-3xl md:text-4xl lg:text-5xl"
                         >
-                            Paddle or Be Paddled
+                            Paddle, or Be Paddled
                         </Typography>
                         <Typography
                             variant="lead"
