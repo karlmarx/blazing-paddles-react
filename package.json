@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://karlmarx.github.io",
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@ericz1803/react-google-calendar": "^4.3.1",
     "@formspree/react": "^2.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
@@ -21,7 +23,6 @@
     "@types/webpack-env": "^1.18.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-photo-album": "^2.3.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",

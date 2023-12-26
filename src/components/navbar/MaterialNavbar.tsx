@@ -33,6 +33,8 @@ import {
     ChatBubbleLeftRightIcon,
     QuestionMarkCircleIcon,
     InformationCircleIcon,
+    UserGroupIcon,
+    TrophyIcon,
 } from "@heroicons/react/24/outline";
 import logo from "../../assets/images/logoblazingpaddles.jpg";
 function CircularLogo() {
@@ -79,7 +81,7 @@ function ProfileMenu() {
                     variant="text"
                     color="blue-gray"
                     className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
-                                    >
+                >
                     <Avatar
                         variant="circular"
                         size="sm"
@@ -109,7 +111,9 @@ function ProfileMenu() {
                             }`}
                         >
                             {React.createElement(icon, {
-                                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                                className: `h-4 w-4 ${
+                                    isLastItem ? "text-red-500" : ""
+                                }`,
                                 strokeWidth: 2,
                             })}
                             <Typography
@@ -159,7 +163,11 @@ function NavListMenu() {
                 <Typography variant="h6" color="blue-gray" className="mb-1">
                     {title}
                 </Typography>
-                <Typography variant="small" color="gray" className="font-normal">
+                <Typography
+                    variant="small"
+                    color="gray"
+                    className="font-normal"
+                >
                     {description}
                 </Typography>
             </MenuItem>
@@ -170,7 +178,12 @@ function NavListMenu() {
         <React.Fragment>
             <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
                 <MenuHandler>
-                    <Typography as="a" href="#" variant="small" className="font-normal">
+                    <Typography
+                        as="a"
+                        href="#"
+                        variant="small"
+                        className="font-normal"
+                    >
                         <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
                             <Square3Stack3DIcon className="h-[18px] w-[18px]" />
                             Paddling{" "}
@@ -183,14 +196,17 @@ function NavListMenu() {
                         </MenuItem>
                     </Typography>
                 </MenuHandler>
-                <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid"  >
+                <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
                     <Card
                         color="blue"
                         shadow={false}
                         variant="gradient"
                         className="col-span-3 grid h-full w-full place-items-center rounded-md"
                     >
-                        <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+                        <RocketLaunchIcon
+                            strokeWidth={1}
+                            className="h-28 w-28"
+                        />
                     </Card>
                     <ul className="col-span-4 flex w-full flex-col gap-1">
                         {renderItems}
@@ -237,26 +253,38 @@ const teamNavListMenuItems = [
 function TeamNavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-    const renderItems = teamNavListMenuItems.map(({ title, link, description }) => (
-        <a href={link} key={title}>
-            <MenuItem>
-                <Typography variant="h6" color="blue-gray" className="mb-1">
-                    {title}
-                </Typography>
-                <Typography variant="small" color="gray" className="font-normal">
-                    {description}
-                </Typography>
-            </MenuItem>
-        </a>
-    ));
+    const renderItems = teamNavListMenuItems.map(
+        ({ title, link, description }) => (
+            <a href={link} key={title}>
+                <MenuItem>
+                    <Typography variant="h6" color="blue-gray" className="mb-1">
+                        {title}
+                    </Typography>
+                    <Typography
+                        variant="small"
+                        color="gray"
+                        className="font-normal"
+                    >
+                        {description}
+                    </Typography>
+                </MenuItem>
+            </a>
+        ),
+    );
 
     return (
         <React.Fragment>
             <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
                 <MenuHandler>
-                    <Typography as="a" href="#" variant="small" className="font-normal">
+                    <Typography
+                        as="a"
+                        href="#"
+                        variant="small"
+                        className="font-normal"
+                    >
                         <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
-                            <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Team{" "}
+                            <Square3Stack3DIcon className="h-[18px] w-[18px]" />{" "}
+                            Team{" "}
                             <ChevronDownIcon
                                 strokeWidth={2}
                                 className={`h-3 w-3 transition-transform ${
@@ -273,7 +301,10 @@ function TeamNavListMenu() {
                         variant="gradient"
                         className="col-span-3 grid h-full w-full place-items-center rounded-md"
                     >
-                        <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
+                        <RocketLaunchIcon
+                            strokeWidth={1}
+                            className="h-28 w-28"
+                        />
                     </Card>
                     <ul className="col-span-4 flex w-full flex-col gap-1">
                         {renderItems}
@@ -293,6 +324,16 @@ function TeamNavListMenu() {
 
 // nav list component
 const navListItems = [
+    {
+        label: "Community",
+        link: "#/service",
+        icon: UserGroupIcon,
+    },
+    {
+        label: "Awards",
+        link: "#/awards",
+        icon: TrophyIcon,
+    },
     {
         label: "Gallery",
         link: "#/gallery",
@@ -321,15 +362,15 @@ const navListItems = [
     {
         label: "FAQ",
         link: "#/faq",
-        icon: InformationCircleIcon ,
+        icon: InformationCircleIcon,
     },
 ];
 
 function NavList() {
     return (
         <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-            <TeamNavListMenu />
-            <NavListMenu />
+            {/*<TeamNavListMenu />*/}
+            {/*<NavListMenu />*/}
             {navListItems.map(({ label, link, icon }, key) => (
                 <Typography
                     key={label}
@@ -337,10 +378,12 @@ function NavList() {
                     href={link}
                     variant="small"
                     color="blue-gray"
-                    className="font-normal"
+                    className="font-normal text-no-wrap"
                 >
                     <MenuItem className="flex items-center gap-2 lg:rounded-full">
-                        {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
+                        {React.createElement(icon, {
+                            className: "h-[18px] w-[18px]",
+                        })}{" "}
                         {label}
                     </MenuItem>
                 </Typography>
@@ -379,7 +422,6 @@ export const MaterialNavbar = () => {
                     href="/"
                     className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata text-3xl"
                 >
-
                     Blazing Paddles
                 </Typography>
                 <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
@@ -388,31 +430,30 @@ export const MaterialNavbar = () => {
                     <NavList />
                 </div>
 
-
                 {/*<div className="relative flex w-full gap-2 md:w-max">*/}
                 <a href="try">
-                <Button
-                    variant="gradient"
-                    size="sm"
-                    fullWidth
-                    className="items-center flex w-full gap-2 md:w-max"
-                    // flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-5 h-5"
+                    <Button
+                        variant="gradient"
+                        size="sm"
+                        fullWidth
+                        className="items-center flex w-full gap-2 md:w-max"
+                        // flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto
                     >
-                        <path
-                            fillRule="evenodd"
-                            d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z"
-                            clipRule="evenodd"
-                        />
-                    </svg>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-5 h-5"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
 
-                    <span>Try Dragonboat</span>
-                </Button>
+                        <span>Try Dragonboat</span>
+                    </Button>
                 </a>
                 {/*</div>*/}
             </div>
@@ -422,4 +463,4 @@ export const MaterialNavbar = () => {
             </MobileNav>
         </Navbar>
     );
-}
+};
