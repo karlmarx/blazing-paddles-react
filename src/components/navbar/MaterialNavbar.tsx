@@ -243,12 +243,6 @@ const teamNavListMenuItems = [
         description:
             "A complete set of UI Elements for building faster websites in less time.",
     },
-    // {
-    //     title: "Canoe",
-    //     link: "#/canoe",
-    //     description:
-    //         "A complete set of UI Elements for building faster websites in less time.",
-    // },
 ];
 function TeamNavListMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -341,7 +335,7 @@ const navListItems = [
     },
     {
         label: "Location",
-        link: "https://maps.app.goo.gl/PqU2XyAgU3kZPM6C6",
+        link: "#/location",
         icon: MapPinIcon,
     },
     {

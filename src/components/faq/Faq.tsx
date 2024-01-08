@@ -11,10 +11,6 @@ import { Link } from "react-router-dom";
 
 const faqs = [
     {
-        title: "When are practices for newbies?",
-        desc: "They are held almost every Saturday at 8:15 AM at Holland Park in Hollywood.  The only exception is the Synergy Series race days that we help host at TY Park listed on the Events page. Please click the button below to let us know you are coming.",
-    },
-    {
         title: "What should I wear?",
         desc: "Keep in mind you will warm up quickly after the paddling begins, and you may get wet. Quick-drying fabrics are a good idea.  Sleeveless shirts and tanks can leave you subject to chafing from the PFD, and to sunburn.  Shorts are usually best for your lower body.  Your shoes will very likely get wet.",
     },

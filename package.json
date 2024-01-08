@@ -5,6 +5,9 @@
   "homepage": "https://karlmarx.github.io",
   "dependencies": {
     "@emotion/react": "^11.11.3",
+
+
+
     "@ericz1803/react-google-calendar": "^4.3.1",
     "@formspree/react": "^2.5.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
