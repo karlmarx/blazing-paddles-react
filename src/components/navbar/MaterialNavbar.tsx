@@ -13,6 +13,7 @@ import {
     Avatar,
     Card,
     IconButton,
+    Collapse,
 } from "@material-tailwind/react";
 import {
     CubeTransparentIcon,
@@ -68,7 +69,26 @@ const profileMenuItems = [
         icon: PowerIcon,
     },
 ];
-
+interface NavItemPropsType {
+    icon: React.ReactNode;
+    label: string;
+    link: string;
+}
+function NavItem({ icon, label, link }: NavItemPropsType) {
+    return (
+        <a href={link}>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="flex items-center gap-1.5 p-1 font-normal"
+            >
+                {icon}
+                {label}
+            </Typography>
+        </a>
+    );
+}
 function ProfileMenu() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -208,7 +228,7 @@ function NavListMenu() {
                             className="h-28 w-28"
                         />
                     </Card>
-                    <ul className="col-span-4 flex w-full flex-col gap-1">
+                    <ul className="mb-4 mt-2 flex flex-col gap-3 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-8">
                         {renderItems}
                     </ul>
                 </MenuList>
@@ -268,46 +288,46 @@ function TeamNavListMenu() {
 
     return (
         <React.Fragment>
-            <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
-                <MenuHandler>
-                    <Typography
-                        as="a"
-                        href="#"
-                        variant="small"
-                        className="font-normal"
-                    >
-                        <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
-                            <Square3Stack3DIcon className="h-[18px] w-[18px]" />{" "}
-                            Team{" "}
-                            <ChevronDownIcon
-                                strokeWidth={2}
-                                className={`h-3 w-3 transition-transform ${
-                                    isMenuOpen ? "rotate-180" : ""
-                                }`}
-                            />
-                        </MenuItem>
-                    </Typography>
-                </MenuHandler>
-                <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-                    <Card
-                        color="blue"
-                        shadow={false}
-                        variant="gradient"
-                        className="col-span-3 grid h-full w-full place-items-center rounded-md"
-                    >
-                        <RocketLaunchIcon
-                            strokeWidth={1}
-                            className="h-28 w-28"
-                        />
-                    </Card>
-                    <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {renderItems}
-                    </ul>
-                </MenuList>
-            </Menu>
-            <MenuItem className="flex items-center gap-2 text-blue-gray-900 lg:hidden">
-                <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Team{" "}
-            </MenuItem>
+            {/*<Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>*/}
+            {/*    <MenuHandler>*/}
+            {/*        <Typography*/}
+            {/*            as="a"*/}
+            {/*            href="#"*/}
+            {/*            variant="small"*/}
+            {/*            className="font-normal"*/}
+            {/*        >*/}
+            {/*            <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">*/}
+            {/*                <Square3Stack3DIcon className="h-[18px] w-[18px]" />{" "}*/}
+            {/*                Team{" "}*/}
+            {/*                <ChevronDownIcon*/}
+            {/*                    strokeWidth={2}*/}
+            {/*                    className={`h-3 w-3 transition-transform ${*/}
+            {/*                        isMenuOpen ? "rotate-180" : ""*/}
+            {/*                    }`}*/}
+            {/*                />*/}
+            {/*            </MenuItem>*/}
+            {/*        </Typography>*/}
+            {/*    </MenuHandler>*/}
+            {/*    <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">*/}
+            {/*        <Card*/}
+            {/*            color="blue"*/}
+            {/*            shadow={false}*/}
+            {/*            variant="gradient"*/}
+            {/*            className="col-span-3 grid h-full w-full place-items-center rounded-md"*/}
+            {/*        >*/}
+            {/*            <RocketLaunchIcon*/}
+            {/*                strokeWidth={1}*/}
+            {/*                className="h-28 w-28"*/}
+            {/*            />*/}
+            {/*        </Card>*/}
+            {/*        <ul className="col-span-4 flex w-full flex-col gap-1">*/}
+            {/*            {renderItems}*/}
+            {/*        </ul>*/}
+            {/*    </MenuList>*/}
+            {/*</Menu>*/}
+            {/*<MenuItem className="flex items-center gap-2 text-blue-gray-900 lg:hidden">*/}
+            {/*    <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Team{" "}*/}
+            {/*</MenuItem>*/}
 
             <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
                 {renderItems}
@@ -348,11 +368,11 @@ const navListItems = [
         link: "#/donate",
         icon: GiftIcon,
     },
-    {
-        label: "Sign-Up",
-        link: "#/contact",
-        icon: ChatBubbleLeftRightIcon,
-    },
+    // {
+    //     label: "Sign-Up",
+    //     link: "#/contact",
+    //     icon: ChatBubbleLeftRightIcon,
+    // },
     {
         label: "FAQ",
         link: "#/faq",
@@ -363,32 +383,16 @@ const navListItems = [
 function NavList() {
     return (
         <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-            {/*<TeamNavListMenu />*/}
-            {/*<NavListMenu />*/}
-            {navListItems.map(({ label, link, icon }, key) => (
-                <Typography
+            {navListItems.map(({ label, link, icon }) => (
+                <NavItem
+                    icon={React.createElement(icon, {
+                        className: "h-5 w-5",
+                    })}
+                    label={label}
+                    link={link}
                     key={label}
-                    as="a"
-                    href={link}
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal text-no-wrap"
-                >
-                    <MenuItem className="flex items-center gap-2 lg:rounded-full">
-                        {React.createElement(icon, {
-                            className: "h-[18px] w-[18px]",
-                        })}{" "}
-                        {label}
-                    </MenuItem>
-                </Typography>
+                />
             ))}
-            {/*<MenuItem className="relative flex w-full gap-2 md:w-max">*/}
-            {/*    <IconButton variant="text" size="md">*/}
-            {/*        /!*<i className="fa-brands fa-instagram text-base" />*!/*/}
-            {/*        <FontAwesomeIcon icon={faInstagram}  size="lg" />*/}
-            {/*        /!*<i className="fa-brands fa-instagram"></i>*!/*/}
-            {/*    </IconButton>*/}
-            {/*</MenuItem>*/}
         </ul>
     );
 }
@@ -407,54 +411,102 @@ export const MaterialNavbar = () => {
 
     return (
         // <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
-        <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
-            <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">
-                {/*<div className="flex flex-wrap items-center justify-between gap-y-4 ">*/}
-
-                <Typography
-                    as="a"
-                    href="/"
-                    className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata text-3xl"
-                >
-                    Blazing Paddles
-                </Typography>
-                <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-                    {/*<div className="flex items-center gap-4">*/}
-                    {/*<div className="hidden lg:block">*/}
-                    <NavList />
-                </div>
-
-                {/*<div className="relative flex w-full gap-2 md:w-max">*/}
-                <a href="try">
-                    <Button
-                        variant="gradient"
-                        size="sm"
-                        fullWidth
-                        className="items-center flex w-full gap-2 md:w-max"
-                        // flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto
+        // <Navbar className="sticky mx-auto">
+        <div className="sticky top-4 z-[999] flex w-full items-center px-4">
+            <Navbar
+                className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4"
+                shadow={false}
+            >
+                {/*<Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">*/}
+                {/*<div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">*/}
+                <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">
+                    <Typography
+                        as="a"
+                        href="/"
+                        color="blue-gray"
+                        className="mr-4 ml-2 cursor-pointer py-1.5 font-pirata text-3xl"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            className="w-5 h-5"
+                        Blazing Paddles
+                    </Typography>
+                    <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+                        {/*<div className="flex items-center gap-4">*/}
+                        {/*<div className="hidden lg:block">*/}
+                        <NavList />
+                    </div>
+                    <a href="#/contact" className=" hidden lg:block">
+                        <Button
+                            color="gray"
+                            // size="sm"
+                            variant="gradient"
+                            className="flex items-center gap-3"
+                            fullWidth
                         >
-                            <path
-                                fillRule="evenodd"
-                                d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                            Sign Up
+                        </Button>
+                    </a>
+                    <IconButton
+                        size="sm"
+                        color="blue-gray"
+                        variant="text"
+                        onClick={toggleIsNavOpen}
+                        className="ml-auto mr-2 lg:hidden"
+                    >
+                        <Bars2Icon className="h-6 w-6" />
+                    </IconButton>
 
-                        <span>Try Dragonboat</span>
-                    </Button>
-                </a>
-                {/*</div>*/}
-            </div>
-
-            <MobileNav open={isNavOpen} className="overflow-scroll">
-                <NavList />
-            </MobileNav>
-        </Navbar>
+                    {/*<a href="try">*/}
+                    {/*TODO: this try button*/}
+                    {/*    <Button*/}
+                    {/*        variant="gradient"*/}
+                    {/*        size="sm"*/}
+                    {/*        fullWidth*/}
+                    {/*        className="items-center flex w-full gap-2 md:w-max"*/}
+                    {/*        // flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto*/}
+                    {/*    >*/}
+                    {/*    </Button>*/}
+                    {/*</a>*/}
+                </div>
+                <Collapse open={isNavOpen}>
+                    <NavList />
+                    <a href="#/contact">
+                        <Button
+                            color="gray"
+                            // size="sm"
+                            variant="gradient"
+                            className="flex items-center gap-3"
+                            fullWidth
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-5 h-5"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M13.5 4.938a7 7 0 11-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 01.572-2.759 6.026 6.026 0 012.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0013.5 4.938zM14 12a4 4 0 01-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 001.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 011.315-4.192.447.447 0 01.431-.16A4.001 4.001 0 0114 12z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                            Sign Up
+                        </Button>
+                    </a>
+                </Collapse>
+                {/*<MobileNav open={isNavOpen} className="overflow-scroll">*/}
+                {/*</MobileNav>*/}
+            </Navbar>
+        </div>
     );
 };

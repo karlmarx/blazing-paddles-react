@@ -32,29 +32,44 @@ export default function ContactUs() {
                             >
                                 Dragon Boat Practice Sign-up
                             </Typography>
-                            <Typography variant="lead" className="mb-16 !text-gray-500">
-                                Beginner-friendly dragon boat practices take place on <b>Saturday</b> mornings at{' '}
-                                <b>8:15 a.m.</b> departing from the Holland Park Boat Ramp in Hollywood, Florida.{' '}
-                                Please fill out the information below to sign up and we will be in touch.
+                            <Typography
+                                variant="lead"
+                                className="mb-16 !text-gray-900"
+                            >
+                                Beginner-friendly dragon boat practices take
+                                place on <b>Saturday</b> mornings at{" "}
+                                <b>8:15 a.m.</b> departing from the Holland Park
+                                Boat Ramp in Hollywood, Florida. Please fill out
+                                the information below to sign up and we will be
+                                in touch.
                             </Typography>
                             {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
                             <form
                                 onSubmit={handleSubmit}
-                                className="flex flex-col gap-4">
-                                <Input crossOrigin={undefined} color="gray" size="lg" label="Name" name="name" id="name" />
+                                className="flex flex-col gap-4"
+                            >
+                                <Input
+                                    crossOrigin={undefined}
+                                    color="gray"
+                                    size="lg"
+                                    label="Name"
+                                    name="name"
+                                    id="name"
+                                />
                                 <ValidationError
                                     prefix="Name"
                                     field="name"
                                     errors={state.errors}
                                 />
-                                <Input crossOrigin={undefined}
+                                <Input
+                                    crossOrigin={undefined}
                                     color="gray"
                                     type="email"
                                     size="lg"
                                     label="Email"
                                     name="email"
-                                       id="email"
+                                    id="email"
                                 />
                                 <ValidationError
                                     prefix="Email"
@@ -73,7 +88,14 @@ export default function ContactUs() {
                                     field="message"
                                     errors={state.errors}
                                 />
-                                <Button type="submit" size="lg" color="gray" className="mt-6" fullWidth disabled={state.submitting}>
+                                <Button
+                                    type="submit"
+                                    size="lg"
+                                    color="gray"
+                                    className="mt-6"
+                                    fullWidth
+                                    disabled={state.submitting}
+                                >
                                     Submit
                                 </Button>
                             </form>
@@ -90,8 +112,13 @@ export default function ContactUs() {
                             >
                                 Contact Information
                             </Typography>
-                            <Typography variant="lead" color="white" className="opacity-50">
-                                You can also reach Captain 'Iron' Will Murphy by email or connect with the team on social media.
+                            <Typography
+                                variant="lead"
+                                color="white"
+                                className="opacity-50"
+                            >
+                                You can also reach Captain 'Iron' Will Murphy by
+                                email or connect with the team on social media.
                             </Typography>
                             <div className="mt-16 grid gap-4">
                                 <div className="flex items-center gap-4">
@@ -114,4 +141,3 @@ export default function ContactUs() {
         </section>
     );
 }
-

@@ -53,7 +53,7 @@ export function Faq() {
                     </Typography>
                     <Typography
                         variant="lead"
-                        className="mx-auto !text-gray-500 lg:w-3/5"
+                        className="mx-auto !text-gray-900 lg:w-3/5"
                     >
                         If you have any other questions, please{" "}
                         <Link
@@ -77,7 +77,7 @@ export function Faq() {
                         <AccordionBody>
                             <Typography
                                 color="blue-gray"
-                                className="font-normal text-gray-500"
+                                className="font-normal text-gray-700"
                             >
                                 They are held almost every Saturday at 8:15 AM
                                 at Holland Park in Hollywood. The only exception
@@ -136,7 +136,7 @@ export function Faq() {
                             <AccordionBody>
                                 <Typography
                                     color="blue-gray"
-                                    className="font-normal text-gray-500"
+                                    className="font-normal text-gray-900"
                                 >
                                     {desc}
                                 </Typography>
