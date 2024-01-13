@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.300be3ee.css",
-    "main.js": "/static/js/main.3fa66fc3.js",
+    "main.css": "/static/css/main.148d6e94.css",
+    "main.js": "/static/js/main.d4c69d2d.js",
     "static/media/wwc.jpg": "/static/media/wwc.cfcef8b58b58add8175d.jpg",
     "static/media/9878694_orig.jpg": "/static/media/9878694_orig.db44b6df23222a541d63.jpg",
     "static/media/4298817_orig.jpg": "/static/media/4298817_orig.fe1dc9600b2ba056fa3b.jpg",
@@ -92,6 +92,7 @@
     "static/media/8265151_orig.jpg": "/static/media/8265151_orig.8882bf3683c5a579b6f7.jpg",
     "static/media/349322139-249616234417064--n_orig.jpg": "/static/media/349322139-249616234417064-6450806038988366932-n_orig.8fe0abd4d274ad3a7871.jpg",
     "static/media/348995831-169753312721023--n_orig.jpg": "/static/media/348995831-169753312721023-5825292719066307083-n_orig.5d5bdf4749268bba8f50.jpg",
+    "static/media/logo_fadeder.png": "/static/media/logo_fadeder.a1674a834dcf13b5506e.png",
     "static/media/9641483_orig.jpg": "/static/media/9641483_orig.8334cddc065383ab3027.jpg",
     "static/media/349200784-980287613147444--n_orig.jpg": "/static/media/349200784-980287613147444-8124736438053994099-n_orig.8bed2dd5163f84d3ae54.jpg",
     "static/media/7048569_orig.jpg": "/static/media/7048569_orig.f17ad7c995ceb518c8e8.jpg",
@@ -137,11 +138,11 @@
     "static/media/6849218_orig.jpg": "/static/media/6849218_orig.d609168ce443825eaf4c.jpg",
     "static/media/logoblazingpaddles.jpg": "/static/media/logoblazingpaddles.8d4196d35bdc0c0b040e.jpg",
     "index.html": "/index.html",
-    "main.300be3ee.css.map": "/static/css/main.300be3ee.css.map",
-    "main.3fa66fc3.js.map": "/static/js/main.3fa66fc3.js.map"
+    "main.148d6e94.css.map": "/static/css/main.148d6e94.css.map",
+    "main.d4c69d2d.js.map": "/static/js/main.d4c69d2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.300be3ee.css",
-    "static/js/main.3fa66fc3.js"
+    "static/css/main.148d6e94.css",
+    "static/js/main.d4c69d2d.js"
   ]
 }
