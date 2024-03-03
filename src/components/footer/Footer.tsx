@@ -43,7 +43,8 @@ const links: footer_link[] = [
             { label: "Events", link: "/events" },
             { label: "Location", link: "/location" },
             { label: "FAQ", link: "/faq" },
-            { label: "Waiver", link: "/waiver" },
+            { label: "Waiver", link: 'https://form.jotform.com/soarteam/waiver' }, // TODO: mkae this open the pop up
+
         ],
     },
     {

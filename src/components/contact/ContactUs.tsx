@@ -8,6 +8,8 @@ import {
     Textarea,
     Checkbox,
 } from "@material-tailwind/react";
+// @ts-ignore
+
 import type { CheckboxStylesType } from "@material-tailwind/react";
 import type { InputProps } from "@material-tailwind/react";
 import type { InputStylesType } from "@material-tailwind/react";
@@ -19,9 +21,10 @@ export default function ContactUs() {
         return <p>Thanks for joining!</p>;
     }
 
+
     return (
         <section className="p-10">
-            <div className="flex w-full flex-col-reverse items-center gap-10 lg:flex-row">
+            <div className="flex w-full flex-col-reverse  items-center gap-10 lg:flex-row">
                 <div className="w-full text-left lg:w-1/2 lg:text-center">
                     <Card color="transparent" className="py-0 lg:py-20">
                         <div className="mx-auto lg:max-w-md">
@@ -40,12 +43,41 @@ export default function ContactUs() {
                                 place on <b>Saturday</b> mornings at{" "}
                                 <b>8:15 a.m.</b> departing from the Holland Park
                                 Boat Ramp in Hollywood, Florida. Please fill out
-                                the information below to sign up and we will be
-                                in touch.
+                                the information below to sign up.
                             </Typography>
                             {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
-                            <form
+                            {!state.succeeded ? <div><div>
+                                <Typography
+                                variant="h6"
+                                color="blue-gray"
+
+                                className="mb-10 text-xl lg:text-2xl"
+                            >                    We have received your information, and we will be in touch soon!  Please click below to sign
+                                our online waiver.  Make sure to contact Will Murphy @ 954.232.7434 to confirm schedule.
+
+                                </Typography></div>
+                                {/*<div className="flex flex-col-reverse ">*/}
+                             <div className="flex flex-row  justify-items-center">
+                                 {/*TODO: ask tribeth how to do this*/}
+                                <Button
+                                    onClick={() => window.open('https://form.jotform.com/soarteam/waiver', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500')}
+                                    size="lg"
+                                    variant="gradient"
+                                                     className="flex flex-row items-center gap-3"
+
+
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                              d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/>
+                                    </svg>
+
+                                    Fill out the Waiver
+                                </Button></div>
+                             {/*</div>*/}
+                            </div> : <form
                                 onSubmit={handleSubmit}
                                 className="flex flex-col gap-4"
                             >
@@ -99,6 +131,7 @@ export default function ContactUs() {
                                     Submit
                                 </Button>
                             </form>
+                                }
                         </div>
                     </Card>
                 </div>
