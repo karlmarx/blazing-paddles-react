@@ -145,9 +145,8 @@ export default function  InfoCarousel() {
                             color="white"
                             className="mb-12 opacity-80"
                         >
-                            TODO: UPDATE THIS OUTDATED INFO AND SHORTEN IT
                             Blazing Paddles has secured the Wilton Manors Island City Canoe Race Coed Division
-                            Championship since the race’s creation in 2001...
+                            Championship in nearly every year since the race’s creation in 2001.
                         </Typography>
                         <div className="flex gap-2">
                             <Button size="lg" color="white">

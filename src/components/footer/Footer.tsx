@@ -29,7 +29,7 @@ const links: footer_link[] = [
             { label: "Join Us", link: "/contact" },
         ],
     },
-    // { Already Done
+    // { TODO: decide whether to include these
     //     title: "Paddling",
     //     items: [
     //         "Dragon Boat",

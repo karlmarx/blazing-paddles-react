@@ -34743,3 +34743,5 @@ fabric.properties
 /node_modules/yet-another-react-lightbox/LICENSE
 /node_modules/yet-another-react-lightbox/package.json
 /node_modules/yet-another-react-lightbox/README.md
+
+.idea/

@@ -20,7 +20,6 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Footer } from "./components/footer/Footer";
 import { MaterialNavbar } from "./components/navbar";
-import { Galleries } from "./components/gallery/Galleries";
 import ContactUs from "./components/contact/ContactUs";
 import { Service } from "./components/service/Service";
 import { LightboxGallery } from "./components/gallery/LightboxGallery";
@@ -55,7 +54,6 @@ function App() {
                 <div className="bg-[url('../public/logo_fadeder.png')] bg-center bg-no-repeat bg-fixed  ">
                     {/*<div className="flex-none">*/}
                     <MaterialNavbar />
-                    {/*<MaterialNavbar2 />*/}
                     {/*</div>*/}
                     <ScrollToTop>
                         <Routes>
@@ -68,16 +66,6 @@ function App() {
 
                             <Route path="/contact" element={<ContactUs />} />
                             <Route path="/events" element={<CalendarFrame />} />
-                            {/*<Route*/}
-                            {/*    path="/location"*/}
-                            {/*    element={*/}
-                            {/*        <Navigate*/}
-                            {/*            to="https://maps.app.goo.gl/PqU2XyAgU3kZPM6C6"*/}
-                            {/*            replace={true}*/}
-                            {/*            relative={"path"}*/}
-                            {/*        />*/}
-                            {/*    }*/}
-                            {/*/>*/}
                             <Route
                                 path="/location"
                                 element={<LocationFrame />}
