@@ -67,16 +67,6 @@ function App() {
                             />
                             <Route path="/contact" element={<ContactUs />} />
                             <Route path="/events" element={<CalendarFrame />} />
-                            {/*<Route*/}
-                            {/*    path="/location"*/}
-                            {/*    element={*/}
-                            {/*        <Navigate*/}
-                            {/*            to="https://maps.app.goo.gl/PqU2XyAgU3kZPM6C6"*/}
-                            {/*            replace={true}*/}
-                            {/*            relative={"path"}*/}
-                            {/*        />*/}
-                            {/*    }*/}
-                            {/*/>*/}
                             <Route
                                 path="/location"
                                 element={<LocationFrame />}
