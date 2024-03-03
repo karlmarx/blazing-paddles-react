@@ -60,11 +60,12 @@ function App() {
                     <ScrollToTop>
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            <Route path="/about" element={<Home />} />
                             <Route
                                 path="/gallery"
                                 element={<LightboxGallery />}
                             />
+                                                        <Route path="/about" element={<Home />} />
+
                             <Route path="/contact" element={<ContactUs />} />
                             <Route path="/events" element={<CalendarFrame />} />
                             <Route
