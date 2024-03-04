@@ -118,6 +118,7 @@ export default function  InfoCarousel() {
                             <Button size="lg" color="white">
                                 OC-6
                             </Button>
+                            {/*TODO: Make these work*/}
                             <Button size="lg" color="white" variant="text">
                                 Join Us
                             </Button>

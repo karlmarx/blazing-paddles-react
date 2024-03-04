@@ -47,7 +47,7 @@ export default function ContactUs() {
                             </Typography>
                             {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
-                            {!state.succeeded ? <div><div>
+                            {state.succeeded ? <div><div>
                                 <Typography
                                 variant="h6"
                                 color="blue-gray"
