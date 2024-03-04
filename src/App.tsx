@@ -31,7 +31,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import { FB_LINK } from "./constants/constants";
 import Awards from "./components/awards/Awards";
 import Donate from "./components/donate/Donate";
-import {WaiverFrame} from "./components/waiver";
 
 library.add(faInstagram);
 // function redirect(url) {
