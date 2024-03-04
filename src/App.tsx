@@ -30,6 +30,7 @@ import { Redirect } from "./components/redirect";
 import ScrollToTop from "./components/ScrollToTop";
 import { FB_LINK } from "./constants/constants";
 import Awards from "./components/awards/Awards";
+import Donate from "./components/donate/Donate";
 
 library.add(faInstagram);
 // function redirect(url) {
@@ -71,10 +72,11 @@ function App() {
                                 element={<LocationFrame />}
                             />
                             <Route path="/service" element={<Service />} />
+                            <Route path="/donate" element={<Donate />} />
                             <Route path="/faq" element={<Faq />} />
 
                             {/*TODO: make these */}
-                            <Route path="/waiver" element={<Home />} />
+                            <Route path="/waiver" element={<WaiverFrame />} />
                             <Route path="/awards" element={<Awards />} />
                             {/*<Route*/}
                             {/*    path="/youtube"*/}
