@@ -53,7 +53,7 @@ export default function ContactUs() {
                                 color="blue-gray"
 
                                 className="mb-10 text-xl lg:text-2xl"
-                            >                    We have received your information, and we will be in touch soon!  Please click below to sign
+                            >  We have received your information, and we will be in touch soon!  Please click below to sign
                                 our online waiver.  Make sure to contact Will Murphy @ 954.232.7434 to confirm schedule.
 
                                 </Typography></div>

@@ -5,6 +5,7 @@ import ccnc from "../assets/images/ccnc.jpg";
 import gardenOfLife from "../assets/images/gardenOfLife.jpg";
 import wiltonManors from "../assets/images/wiltonManors.jpg";
 import nishPic from "../assets/images/nishPic.jpg";
+import {Link} from "react-router-dom";
 
 export default function  InfoCarousel() {
     return (
@@ -46,12 +47,16 @@ export default function  InfoCarousel() {
                             Blazing Paddles is a Dragon Boat team with members of all ages and from every walk of life. We are located in Broward County, Florida, and practice year-round in Hollywood, FL. What really sets us apart is that we have fun doing it and we like teaching new paddlers: No experience needed!
                         </Typography>
                         <div className="flex justify-center gap-2">
-                            <Button size="lg" color="white">
+                            <Link to="/contact">
+                                <Button size="lg" color="white">
                                 Join Us
-                            </Button>
-                            <Button size="lg" color="white" variant="text">
-                                Gallery
-                            </Button>
+                                </Button>
+                            </Link>
+                            <Link to="/gallery">
+                                <Button size="lg" color="white" variant="text">
+                                    Gallery
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -81,12 +86,17 @@ export default function  InfoCarousel() {
                             Day 1 is 200m, the pirates both got a bronze medal...
                         </Typography>
                         <div className="flex  justify-center gap-2">
-                            <Button size="lg" color="white">
-                                Join Us
-                            </Button>
-                            <Button size="lg" color="white" variant="text">
-                                Gallery
-                            </Button>
+                            <Link to="/contact">
+                                <Button size="lg" color="white">
+                                    Join Us
+                                </Button>
+                            </Link>
+                            <Link to="/gallery">
+
+                                <Button size="lg" color="white" variant="text">
+                                    Gallery
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -115,13 +125,11 @@ export default function  InfoCarousel() {
                             to Nish Outrigger Challenge 2023 securing 3rd and 5th (?) place overall.
                         </Typography>
                         <div className="flex gap-2">
-                            <Button size="lg" color="white">
-                                OC-6
-                            </Button>
-                            {/*TODO: Make these work*/}
-                            <Button size="lg" color="white" variant="text">
-                                Join Us
-                            </Button>
+                            <Link to="/contact">
+                                {/*TODO: Make these work*/}<Button size="lg" color="white" variant="text">
+                                    Join Us
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -150,12 +158,17 @@ export default function  InfoCarousel() {
                             Championship in nearly every year since the race’s creation in 2001.
                         </Typography>
                         <div className="flex gap-2">
-                            <Button size="lg" color="white">
-                                Explore
-                            </Button>
+                            <Link to="/faq">
+                                <Button size="lg" color="white">
+                                    FAQ
+                                </Button>
+                            </Link>
+                            <Link to="/gallery">
+
                             <Button size="lg" color="white" variant="text">
                                 Gallery
                             </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
