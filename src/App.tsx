@@ -76,7 +76,7 @@ function App() {
                             <Route path="/faq" element={<Faq />} />
 
                             {/*TODO: make these */}
-                            <Route path="/waiver" element={<WaiverFrame />} />
+                            {/*<Route path="/waiver" element={<WaiverFrame />} />*/}
                             <Route path="/awards" element={<Awards />} />
                             {/*<Route*/}
                             {/*    path="/youtube"*/}

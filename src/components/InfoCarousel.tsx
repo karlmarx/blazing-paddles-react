@@ -47,9 +47,9 @@ export default function  InfoCarousel() {
                             Blazing Paddles is a Dragon Boat team with members of all ages and from every walk of life. We are located in Broward County, Florida, and practice year-round in Hollywood, FL. What really sets us apart is that we have fun doing it and we like teaching new paddlers: No experience needed!
                         </Typography>
                         <div className="flex justify-center gap-2">
-                            <Link to="/contact">
+                            <Link to="/faq">
                                 <Button size="lg" color="white">
-                                Join Us
+                                FAQ
                                 </Button>
                             </Link>
                             <Link to="/gallery">
@@ -81,14 +81,13 @@ export default function  InfoCarousel() {
                             color="white"
                             className="mb-12 opacity-80"
                         >
-                            TODO: shorten
                             Blazing Paddles sent out two crews for the 2021 Club Crew National Championships at Sarasota, Orlando in  October 1-3, 2021: Senior B and Senior C Small Boat.
                             Day 1 is 200m, the pirates both got a bronze medal...
                         </Typography>
                         <div className="flex  justify-center gap-2">
-                            <Link to="/contact">
+                            <Link to="/service">
                                 <Button size="lg" color="white">
-                                    Join Us
+                                    Community Service
                                 </Button>
                             </Link>
                             <Link to="/gallery">
@@ -158,9 +157,9 @@ export default function  InfoCarousel() {
                             Championship in nearly every year since the race’s creation in 2001.
                         </Typography>
                         <div className="flex gap-2">
-                            <Link to="/faq">
+                            <Link to="/awards">
                                 <Button size="lg" color="white">
-                                    FAQ
+                                    Awards
                                 </Button>
                             </Link>
                             <Link to="/gallery">
