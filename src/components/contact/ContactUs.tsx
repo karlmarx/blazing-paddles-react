@@ -47,7 +47,7 @@ export default function ContactUs() {
                             </Typography>
                             {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
-                            {state.succeeded ? <div><div>
+                            {!state.succeeded ? <div><div>
                                 <Typography
                                 variant="h6"
                                 color="blue-gray"
@@ -58,8 +58,7 @@ export default function ContactUs() {
 
                                 </Typography></div>
                                 {/*<div className="flex flex-col-reverse ">*/}
-                             <div className="flex flex-row  justify-items-center">
-                                 {/*TODO: ask tribeth how to do this*/}
+                             <div className="flex flex-row  justify-content-center">
                                 <Button
                                     onClick={() => window.open('https://form.jotform.com/soarteam/waiver', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500')}
                                     size="lg"
