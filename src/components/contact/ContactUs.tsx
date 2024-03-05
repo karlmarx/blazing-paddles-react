@@ -16,11 +16,6 @@ import type { InputStylesType } from "@material-tailwind/react";
 // TODO: link to waiver on submission
 export default function ContactUs() {
     const [state, handleSubmit] = useForm("xyyrgvnp");
-    if (state.succeeded) {
-        // TODO: replace with pop-up
-        return <p>Thanks for joining!</p>;
-    }
-
 
     return (
         <section className="p-10">
