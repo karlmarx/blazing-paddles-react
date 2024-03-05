@@ -53,7 +53,7 @@ export default function ContactUs() {
 
                                 </Typography></div>
                                 {/*<div className="flex flex-col-reverse ">*/}
-                             <div className="flex flex-row  justify-content-center">
+                             <div className="flex flex-row  justify-center">
                                 <Button
                                     onClick={() => window.open('https://form.jotform.com/soarteam/waiver', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500')}
                                     size="lg"
