@@ -29,7 +29,7 @@ let awardTimelineItems: Array<AwardTimelineItemType> = [
     {
         header: "2001 - 2023: Island City Canoe Relay Race",
         location: "Wilton Manors, FL",
-        text: "Blazing Paddles has secured the Coed Division Championship since the race’s creation in 2001, 15 times. Our coed team was the overall winner (beating the men’s teams) in 2006, 2007, 2009, 2010, 2012, 2013, 2015, and 2023. Our women’s crew has entered their division twice, taking first place on both occasions.",
+        text: "Since the race’s creation in 2001, Blazing Paddles has secured the Coed Division Championship every year it was held except one. Our coed team was the overall winner (beating the men’s teams) in 2006, 2007, 2009, 2010, 2012, 2013, 2015, 2018, 2022 and 2023. Our women’s crew has entered their division twice, taking first place on both occasions.",
     },
     {
         header: "2010, 2013: MR340",
