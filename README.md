@@ -1,3 +1,3 @@
-# blazing_paddles_website
+# Blazing Paddles Website 2.0
 
-Working prototype for new Blazing Paddles website
+coming soon to https://www.paddlebp.org
