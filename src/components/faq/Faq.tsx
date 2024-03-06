@@ -16,7 +16,7 @@ const faqs = [
     },
     {
         title: "How do I join the Blazing Paddles Team?",
-        desc: "You will need to complete a membership application, pay annual dues, and come to practice.  Team members each serve on at least one task force to help the team with such things as recruiting and retention, equipment maintenance and repairs and seeking sponsorships.",
+        desc: "You will need to complete a membership application, come to practice, and pay annual dues (no one is turned away for economic reasons — please ask if you need special arrangements).  Team members each serve on at least one task force to help the team with such things as recruiting and retention, equipment maintenance and repairs and seeking sponsorships.",
     },
     {
         title: "What level of fitness is needed to join the club?",
@@ -32,7 +32,7 @@ const faqs = [
     },
     {
         title: "When and where are the races?",
-        desc: "There are dozens of races around the world.  We try to participate in as many races as we can in Florida, and at least one race outside the area each year.   We most commonly race in Deerfield Beach, Wilton Manors and Key Biscayne.  Members of the team have participated in races (in dragon boats or other paddlecraft) in many other locations in Florida, plus Washington, DC; Houston, Texas; Memphis, Chattanooga and Knoxville, Tennessee; Decatur, Alabama; and Cardiff, Wales. In 2010, members of the team were on the crew that set the World Record for Longest Race Completed by Dragon Boat when they paddled from Kansas City to St. Charles, Missouri — 340 miles — in 38 hours and 5 minutes.",
+        desc: "There are dozens of races around the world.  We try to participate in as many races as we can in Florida, and at least one race outside the area each year.   We most commonly race in Wilton Manors and Key Biscayne.  Members of the team have participated in races (in dragon boats or other paddlecraft) in many other locations in Florida, plus Washington, DC; Houston, Texas; Memphis, Chattanooga and Knoxville, Tennessee; Decatur, Alabama; and Cardiff, Wales. In 2010, members of the team were on the crew that set the World Record for Longest Race Completed by Dragon Boat when they paddled from Kansas City to St. Charles, Missouri — 340 miles — in 38 hours and 5 minutes.",
     },
 ];
 
@@ -80,16 +80,14 @@ export function Faq() {
                                 className="font-normal text-gray-700"
                             >
                                 They are held almost every Saturday at 8:15 AM
-                                at Holland Park in Hollywood. The only exception
-                                is the Synergy Series race days that we help
-                                host at TY Park listed on the{" "}
+                                at Holland Park in Hollywood. The only exceptions
+                                are race days, special events, or if there is lightning. Check out the{" "}
                                 <Link
                                     to="/events"
                                     className="font-semibold hover:font-extrabold"
                                 >
                                     Event Calendar
-                                </Link>{" "}
-                                . Please click{" "}
+                                </Link>{" "} for the most up-to-date information. Please click{" "}
                                 <Link
                                     to="/contact"
                                     className="font-semibold hover:font-extrabold"

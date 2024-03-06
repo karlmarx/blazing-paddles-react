@@ -42,7 +42,7 @@ export default function ContactUs() {
                             </Typography>
                             {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
-                            {!state.succeeded ? <div><div>
+                            {state.succeeded ? <div><div>
                                 <Typography
                                 variant="h6"
                                 color="blue-gray"
@@ -150,9 +150,11 @@ export default function ContactUs() {
                             <div className="mt-16 grid gap-4">
                                 <div className="flex items-center gap-4">
                                     <EnvelopeIcon className="h-6 w-6 text-white" />
-                                    <Typography className="font-bold !text-white">
-                                        WillMurphy@SOARteam.com
-                                    </Typography>
+                                    <a href="mailto:WillMurphy@SOARteam.com?subject=Paddlebp.org Inquiry">
+                                        <Typography className="font-bold !text-white">
+                                            WillMurphy@SOARteam.com
+                                        </Typography>
+                                    </a>
                                 </div>
                             </div>
                             <div className="my-10 flex items-center gap-8">
