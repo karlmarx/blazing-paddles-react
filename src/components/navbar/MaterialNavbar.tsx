@@ -28,6 +28,8 @@ import {
     RocketLaunchIcon,
     Bars2Icon,
     PhotoIcon,
+    Bars3Icon,
+    XMarkIcon,
     CalendarDaysIcon,
     MapPinIcon,
     GiftIcon,
@@ -413,13 +415,19 @@ export const MaterialNavbar = () => {
         // <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
         // <Navbar className="sticky mx-auto">
         <div className="sticky top-4 z-[999] flex w-full items-center px-4">
-            <Navbar
-                className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4"
-                shadow={false}
-            >
+            {/*<div className="h-full min-h-screen p-4">*/}
+            {/*<Navbar*/}
+            {/*    className="mx-auto max-w-screen-xl px-4 py-2 lg:px-8 lg:py-4"*/}
+            {/*    shadow={false}*/}
+            {/*>*/}
+                <Navbar
+                    className="mx-auto"
+                    shadow={false}
+                >
+
                 {/*<Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">*/}
                 {/*<div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">*/}
-                <div className="relative mx-auto flex flex-wrap justify-between items-center text-blue-gray-900">
+                <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
                     <Typography
                         as="a"
                         href="/"
@@ -428,12 +436,13 @@ export const MaterialNavbar = () => {
                     >
                         Blazing Paddles
                     </Typography>
-                    <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+                    {/*<div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">*/}
+                    <div className="hidden lg:block">
                         {/*<div className="flex items-center gap-4">*/}
                         {/*<div className="hidden lg:block">*/}
                         <NavList />
                     </div>
-                    <a href="#/contact" className=" hidden lg:block">
+                    <a href="#/contact" className=" hidden lg:inline-block">
                         <Button
                             color="gray"
                             // size="sm"
@@ -461,9 +470,14 @@ export const MaterialNavbar = () => {
                         color="blue-gray"
                         variant="text"
                         onClick={toggleIsNavOpen}
-                        className="ml-auto mr-2 lg:hidden"
+                        className="ml-auto mr-2 lg:hidden inline-block"
                     >
-                        <Bars2Icon className="h-6 w-6" />
+                        {isNavOpen ? (
+                            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+                        ) : (
+                            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+                        )}
+                        {/*<Bars2Icon className="h-6 w-6" />*/}
                     </IconButton>
 
                     {/*<a href="try">*/}
