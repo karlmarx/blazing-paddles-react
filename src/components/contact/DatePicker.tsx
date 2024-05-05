@@ -45,7 +45,7 @@ export default function DatePicker() {
                 console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
                 //TODO if summary includes practice adn not cancelled add to available dates
                 const evDate = event.startDate.toJSDate()
-                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1) {
+                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1) {
                     console.log(event.summary)
                     console.log("isPractice")
                     found_dates.push(evDate)

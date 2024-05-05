@@ -497,7 +497,7 @@ export const MaterialNavbar = () => {
                     <a href="#/contact">
                         <Button
                             color="gray"
-                            // size="sm"
+                            size="sm"
                             variant="gradient"
                             className="flex items-center gap-3"
                             fullWidth

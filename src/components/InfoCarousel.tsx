@@ -21,6 +21,7 @@ export default function  InfoCarousel() {
                     <Carousel className="rounded-xl
                     bg-gray-900
                     bg-gradient-to-t
+                    overflow-y-hidden
 "
                   // autoplay={true}
                   loop={true} autoplayDelay={3000}>
@@ -42,7 +43,7 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80 "
+                            className="mb-12 opacity-80 collapse md:visible"
                         >
                             Blazing Paddles is a Dragon Boat team with members of all ages and from every walk of life. We are located in Broward County, Florida, and practice year-round in Hollywood, FL. What really sets us apart is that we have fun doing it and we like teaching new paddlers: No experience needed!
                         </Typography>
@@ -72,14 +73,14 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="h1"
                             color="white"
-                            className="pt-10 mb-4 text-3xl md:text-4xl lg:text-5xl"
+                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
                         >
                             Dragonboat
                         </Typography>
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80"
+                            className="mb-12 opacity-80 collapse md:visible"
                         >
                             Blazing Paddles sent out two crews for the 2021 Club Crew National Championships at Sarasota, Orlando in  October 1-3, 2021: Senior B and Senior C Small Boat.
                             Day 1 is 200m, the pirates both got a bronze medal...
@@ -118,7 +119,7 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80"
+                            className="mb-12 opacity-80 collapse md:visible"
                         >
                             The team has a 6-person outrigger canoe that we paddle and race in.  The team sent two teams
                             to Nish Outrigger Challenge 2023 securing 3rd and 5th (?) place overall.
@@ -151,7 +152,7 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80"
+                            className="mb-12 opacity-80 collapse md:visible"
                         >
                             Blazing Paddles has secured the Wilton Manors Island City Canoe Race Coed Division
                             Championship in nearly every year since the race’s creation in 2001.
@@ -183,14 +184,14 @@ export default function  InfoCarousel() {
                         <Typography
                             variant="h1"
                             color="white"
-                            className="mb-4"
+                            className="mb-4 text-3xl md:text-4xl lg:text-5xl"
                         >
                             Garden of Life
                         </Typography>
                         <Typography
                             variant="lead"
                             color="white"
-                            className="mb-12 opacity-80"
+                            className="mb-12 opacity-80 collapse md:visible"
                         >
                             Garden of Life is a proud sponsor of Blazing Paddles. They are a certified B-Corp and make
                             wide variety of excellent, organic, non-GMO products.
