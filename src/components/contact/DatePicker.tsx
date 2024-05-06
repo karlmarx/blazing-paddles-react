@@ -42,12 +42,10 @@ export default function DatePicker() {
             const found_yeardays = []
             for (const vevent of vevents) {
                 var event = new ICAL.Event(vevent);
-                console.log(event)
-                console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
+                console.log(event.summary)
                 //TODO if summary includes practice adn not cancelled add to available dates
                 const evDate = event.startDate.toJSDate()
-                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1) {
-                    console.log(event.summary)
+                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.description.search(/Holland/i) != -1) {
                     console.log("isPractice")
                     found_dates.push(evDate)
                     found_yeardays.push(getDayOfYear(evDate))
@@ -74,7 +72,6 @@ export default function DatePicker() {
                 date.setDate(date.getDate() + 1);
             }
 
-            console.log(dates);
 
 
             setDisabledDays(dates)
