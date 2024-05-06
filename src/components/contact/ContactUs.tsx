@@ -6,12 +6,14 @@ import {
     Card,
     Input,
     Textarea,
-    Checkbox,
+    Checkbox, IconButton,
 } from "@material-tailwind/react";
 // @ts-ignore
 
 
 import DatePicker from "./DatePicker";
+import {ExternalLink} from "../external";
+import {FB_LINK, INSTAGRAM_LINK, MAPS_LINK, YOUTUBE_LINK} from "../../constants/constants";
 // TODO: link to waiver on submission
 export default function ContactUs() {
     const [state, handleSubmit] = useForm("xyyrgvnp");
@@ -158,10 +160,44 @@ export default function ContactUs() {
                                     </div>
                                 </div>
                                 <div className="my-10 flex items-center gap-8">
-                                    <i className="fa-brands fa-instagram text-xl text-white"/>
-                                    <i className="fa-brands fa-youtube text-xl text-white"/>
-                                    <i className="fa-brands fa-facebook text-xl text-white"/>
-                                    <i className="fa-brands fa-google text-xl text-white"/>
+                                    <ExternalLink url={INSTAGRAM_LINK}>
+                                        <IconButton
+                                            variant="text"
+                                            size="sm"
+                                            color="white"
+                                        >
+                                            <i className="fa-brands fa-instagram text-xl text-white"/>
+                                        </IconButton>
+                                    </ExternalLink>
+
+                                    <ExternalLink url={YOUTUBE_LINK}>
+                                        <IconButton
+                                            variant="text"
+                                            size="sm"
+                                            color="white"
+                                        >
+                                            <i className="fa-brands fa-youtube text-xl text-white"/>
+                                        </IconButton>
+                                    </ExternalLink>
+
+                                    <ExternalLink url={FB_LINK}>
+                                        <IconButton
+                                            variant="text"
+                                            size="sm"
+                                            color="white"
+                                        >
+                                            <i className="fa-brands fa-facebook text-xl text-white"/>
+                                        </IconButton>
+                                    </ExternalLink>
+                                    <ExternalLink url={MAPS_LINK}>
+                                        <IconButton
+                                            variant="text"
+                                            size="sm"
+                                            color="white"
+                                        >
+                                            <i className="fa-brands fa-google text-xl text-white"/>
+                                        </IconButton>
+                                    </ExternalLink>
                                 </div>
                             </div>
                         </Card>

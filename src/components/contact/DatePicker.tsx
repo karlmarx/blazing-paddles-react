@@ -3,7 +3,7 @@ import {
     Input,
     Popover,
     PopoverHandler,
-    PopoverContent,
+    PopoverContent, Spinner,
 } from "@material-tailwind/react";
 // @ts-ignore
 import ICAL from "ical.js";
@@ -19,6 +19,7 @@ export default function DatePicker() {
     const [dates, setDates] = React.useState<Array<any>>([]);
     const [disableDays, setDisabledDays] = React.useState<Array<Matcher>>([]);
     const [month, setMonth] = useState<Date>();
+    const [loading, setLoading] = useState<boolean>(true);
 
     const fetchDates = async() => {
 
@@ -77,6 +78,7 @@ export default function DatePicker() {
 
 
             setDisabledDays(dates)
+            setLoading(false)
             // console.log(jCalData)
         } catch (err) {
             const date = startOfMonth(new Date())
@@ -98,18 +100,21 @@ export default function DatePicker() {
             setDate(found_dates[0])
             setMonth(found_dates[0])
             setDisabledDays(dates)
+            setLoading(false)
 
         }
     };
 
     useEffect(() => {
         fetchDates()
+
         }, []);
 
 
 
 
         return (
+            loading ? <Spinner className="" /> :
             <div className="">
                 <Popover placement="bottom">
                     <PopoverHandler>
