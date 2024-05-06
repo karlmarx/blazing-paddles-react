@@ -22,7 +22,7 @@ export default function  InfoCarousel() {
                     bg-gray-900
                     bg-gradient-to-t
                     overflow-y-hidden
-"
+                    "
                   // autoplay={true}
                   loop={true} autoplayDelay={3000}>
             <div className="relative h-full w-full">
