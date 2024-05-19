@@ -11,12 +11,14 @@ import {addMonths, endOfYesterday, format, getDate, getDayOfYear, isPast, isSatu
 import {DateAfter, DayOfWeek, DayPicker, Matcher} from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import axios, {AxiosResponse} from "axios";
-import { useField, useFormikContext } from "formik";
 
 
 
-export default function DatePicker() {
-    const [date, setDate] = React.useState<Date>();
+// @ts-ignore
+export default function DatePicker({date, handleSelect}) {
+    // const [date, setDate] = React.useState<Date>();
+    const [inputValue, setInputValue] = useState("");
+
     const [dates, setDates] = React.useState<Array<any>>([]);
     const [disableDays, setDisabledDays] = React.useState<Array<Matcher>>([]);
     const [month, setMonth] = useState<Date>();
@@ -44,16 +46,14 @@ export default function DatePicker() {
             for (const vevent of vevents) {
                 var event = new ICAL.Event(vevent);
                 console.log(event)
-                console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
+                // console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
                 //TODO if summary includes practice adn not cancelled add to available dates
                 const evDate = event.startDate.toJSDate()
-                console.log(`${isSaturday(evDate)}isSaturday`)
-                console.log(`${isPast(evDate) }isPast`)
-                console.log(`${event.summary.search(/\svs\s/)}vs`)
-                console.log(`${event.summary.search(/\sHolland\s/)}Holland`)
-                console.log(`${event.summary.search(/\scancel\s/)}cancel`)
-console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1)
-                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1) {
+                // console.log(`${isSaturday(evDate)}isSaturday`)
+                // console.log(`${isPast(evDate) }isPast`)
+
+                const summary_desc = event.summary + event.description;
+                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && summary_desc.search(/CANCEL/i) == -1 && summary_desc.search(/Holland/i) != -1) {
                     console.log(event.summary)
                     console.log("isPractice")
                     found_dates.push(evDate)
@@ -62,7 +62,7 @@ console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(
 
             }
             setDates(found_dates)
-            setDate(found_dates[0])
+            handleSelect(found_dates[0])
             setMonth(found_dates[0])
 
 
@@ -104,7 +104,7 @@ console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(
 
             console.log(dates);
             console.error(err);
-            setDate(found_dates[0])
+            handleSelect(found_dates[0])
             setMonth(found_dates[0])
             setDisabledDays(dates)
             setLoading(false)
@@ -120,8 +120,11 @@ console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(
 
 
 
-        return (
-            loading ? <Spinner className="" /> :
+    return (
+            loading ?
+                <div className="flex justify-center ">
+                    <Spinner className="" />
+                </div>:
             <div className="">
                 <Popover placement="bottom">
                     <PopoverHandler>
@@ -142,7 +145,7 @@ console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(
                             // toMonth={new Date} tODO
                             mode="single"
                             selected={date}
-                            onSelect={setDate}
+                            onSelect={handleSelect}
                             showOutsideDays
                             defaultMonth={month}
                             fromMonth={month}

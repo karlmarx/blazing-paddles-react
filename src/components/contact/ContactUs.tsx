@@ -29,6 +29,8 @@ export default function ContactUs() {
     const [disableDays, setDisabledDays] = React.useState<boolean>(false);
     const [succeeded, setSucceeded] = React.useState<boolean>(false);
     const [isSent, setIsSent] = React.useState(false);
+    const [date, setDate] = React.useState<Date>();
+    const formikProps = useFormikContext();
 
         const initialValues: MyFormValues = {
             name: '',
@@ -40,11 +42,16 @@ export default function ContactUs() {
     const formik = useFormik({
         initialValues: initialValues,
         // validationSchema: validationSchema,
-        onSubmit: (values, is) => {
+        onSubmit: (values: MyFormValues) => {
             axios({
                 method: "post",
                 url: "https://us-east1-avian-serenity-393711.cloudfunctions.net/post-form",
-                data: { email: values.email, values }
+                data: {
+                    name: values.name,
+                    email: values.email,
+                    date: values.date,
+                    message: values.message,
+                        }
             })
                 .then(r => {
                     setIsSent(true);
@@ -52,6 +59,19 @@ export default function ContactUs() {
             alert(JSON.stringify(values, null, 2));
         },
     });
+
+
+    const handleSelect = (date: Date | undefined) => {
+        if (!date) {
+           // setInputValue("");
+            setDate(undefined);
+        } else {
+            setDate(date);
+            //setInputValue(format(date, "MM/dd/yyyy"));
+            formik.setFieldValue("date", date);
+
+        }
+    };
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
@@ -84,12 +104,14 @@ export default function ContactUs() {
                                 {!isSent ?
 
 
+
                                     <form
                                     onSubmit={formik.handleSubmit}
                                     className="flex flex-col gap-4"
                                 >
-                                        <DatePicker
-/>
+                                        <DatePicker date={date} handleSelect={handleSelect}
+
+                                        />
                                         <Input
                                             crossOrigin={undefined}
                                             color="gray"
@@ -122,7 +144,6 @@ export default function ContactUs() {
                                             label="Questions/Concerns"
                                             name="message"
                                             id="message"
-                                            required
                                             value={formik.values.message}
                                             onChange={formik.handleChange}
                                         />
