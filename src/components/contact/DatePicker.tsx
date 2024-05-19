@@ -11,6 +11,7 @@ import {addMonths, endOfYesterday, format, getDate, getDayOfYear, isPast, isSatu
 import {DateAfter, DayOfWeek, DayPicker, Matcher} from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import axios, {AxiosResponse} from "axios";
+import { useField, useFormikContext } from "formik";
 
 
 
@@ -26,7 +27,7 @@ export default function DatePicker() {
         try {
             axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-            const url = "https://classroom-tracker-gu6t24lssq-uk.a.run.app/ical"
+            const url = "https://function-1-gu6t24lssq-ue.a.run.app"
             const response = await axios(url)
 
 
@@ -46,6 +47,12 @@ export default function DatePicker() {
                 console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
                 //TODO if summary includes practice adn not cancelled add to available dates
                 const evDate = event.startDate.toJSDate()
+                console.log(`${isSaturday(evDate)}isSaturday`)
+                console.log(`${isPast(evDate) }isPast`)
+                console.log(`${event.summary.search(/\svs\s/)}vs`)
+                console.log(`${event.summary.search(/\sHolland\s/)}Holland`)
+                console.log(`${event.summary.search(/\scancel\s/)}cancel`)
+console.log("!" + isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1)
                 if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1) {
                     console.log(event.summary)
                     console.log("isPractice")

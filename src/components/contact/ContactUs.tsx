@@ -1,4 +1,4 @@
-import { ValidationError, useForm } from "@formspree/react";
+// import { ValidationError, useForm } from "@formspree/react";
 import { EnvelopeIcon, PhoneIcon, TicketIcon } from "@heroicons/react/24/solid";
 import {
     Button,
@@ -9,15 +9,49 @@ import {
     Checkbox, IconButton,
 } from "@material-tailwind/react";
 // @ts-ignore
-
-
 import DatePicker from "./DatePicker";
 import {ExternalLink} from "../external";
 import {FB_LINK, INSTAGRAM_LINK, MAPS_LINK, YOUTUBE_LINK} from "../../constants/constants";
+import {Field, Form, Formik, useFormik, useFormikContext} from "formik";
+import React from "react";
+import {Matcher} from "react-day-picker";
+import axios from "axios";
 // TODO: link to waiver on submission
-export default function ContactUs() {
-    const [state, handleSubmit] = useForm("xyyrgvnp");
 
+interface MyFormValues {
+    name: string,
+    email: string,
+    message: string,
+    date: Date,
+}
+export default function ContactUs() {
+    // const [state, handleSubmit] = useForm("xyyrgvnp");
+    const [disableDays, setDisabledDays] = React.useState<boolean>(false);
+    const [succeeded, setSucceeded] = React.useState<boolean>(false);
+    const [isSent, setIsSent] = React.useState(false);
+
+        const initialValues: MyFormValues = {
+            name: '',
+            email: '',
+            message: '',
+            date: new Date(),
+        }
+
+    const formik = useFormik({
+        initialValues: initialValues,
+        // validationSchema: validationSchema,
+        onSubmit: (values, is) => {
+            axios({
+                method: "post",
+                url: "https://us-east1-avian-serenity-393711.cloudfunctions.net/post-form",
+                data: { email: values.email, values }
+            })
+                .then(r => {
+                    setIsSent(true);
+                })
+            alert(JSON.stringify(values, null, 2));
+        },
+    });
     return (
         <>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
@@ -46,54 +80,29 @@ export default function ContactUs() {
                                 </Typography>
                                 {/*TODO: confirmation pop-up with link to faq and waiver*/}
 
-                                {state.succeeded ? <div>
-                                    <div>
-                                        <Typography
-                                            variant="h6"
-                                            color="blue-gray"
-
-                                            className="mb-10 text-xl lg:text-2xl"
-                                        > We have received your information, and we will be in touch soon! Please click
-                                            below to sign
-                                            our online waiver. Make sure to contact Will Murphy @ 954.232.7434 to
-                                            confirm schedule.
-
-                                        </Typography></div>
-                                    {/*<div className="flex flex-col-reverse ">*/}
-                                    <div className="flex flex-row  justify-center">
-                                        <Button
-                                            onClick={() => window.open('https://form.jotform.com/soarteam/waiver', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500')}
-                                            size="lg"
-                                            variant="gradient"
-                                            className="flex flex-row items-center gap-3"
+                                {/*{state.succeeded ? <div>*/}
+                                {!isSent ?
 
 
-                                        >
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/>
-                                            </svg>
-
-                                            Fill out the Waiver
-                                        </Button></div>
-                                    {/*</div>*/}
-                                </div> : <form
-                                    onSubmit={handleSubmit}
+                                    <form
+                                    onSubmit={formik.handleSubmit}
                                     className="flex flex-col gap-4"
                                 >
-                                    <DatePicker/>
-                                    <Input
-                                        crossOrigin={undefined}
-                                        color="gray"
-                                        size="lg"
-                                        label="Name"
-                                        name="name"
-                                        id="name"/>
-                                    <ValidationError
-                                        prefix="Name"
-                                        field="name"
-                                        errors={state.errors}/>
+                                        <DatePicker
+/>
+                                        <Input
+                                            crossOrigin={undefined}
+                                            color="gray"
+                                            id="name"
+                                            size="lg"
+                                            name="name"
+                                            label="Name"
+                                            type="text"
+                                            required
+                                            value={formik.values.name}
+                                            onChange={formik.handleChange}
+                                        />
+
                                     <Input
                                         crossOrigin={undefined}
                                         color="gray"
@@ -101,32 +110,68 @@ export default function ContactUs() {
                                         size="lg"
                                         label="Email"
                                         name="email"
-                                        id="email"/>
-                                    <ValidationError
-                                        prefix="Email"
-                                        field="email"
-                                        errors={state.errors}/>
-                                    <Textarea
-                                        color="gray"
-                                        size="lg"
-                                        label="Questions/Concerns"
-                                        name="message"
-                                        id="message"/>
-                                    <ValidationError
-                                        prefix="Message"
-                                        field="message"
-                                        errors={state.errors}/>
+                                        id="email"
+                                        required
+                                        value={formik.values.email}
+                                        onChange={formik.handleChange}
+                                    />
+
+                                        <Textarea
+                                            color="gray"
+                                            size="lg"
+                                            label="Questions/Concerns"
+                                            name="message"
+                                            id="message"
+                                            required
+                                            value={formik.values.message}
+                                            onChange={formik.handleChange}
+                                        />
+
                                     <Button
                                         type="submit"
                                         size="lg"
                                         color="gray"
                                         className="mt-6"
                                         fullWidth
-                                        disabled={state.submitting}
+                                        disabled={formik.isSubmitting}
                                     >
                                         Submit
                                     </Button>
-                                </form>}
+                                </form> :
+                                    <div>
+                                    <div>
+                                    <Typography
+                                    variant="h6"
+                                    color="blue-gray"
+
+                                    className="mb-10 text-xl lg:text-2xl"
+                                    > We have received your information, and we will be in touch soon! Please click
+                                    below to sign
+                                    our online waiver. Make sure to contact Will Murphy @ 954.232.7434 to
+                                    confirm schedule.
+
+                                    </Typography></div>
+                                {/*<div className="flex flex-col-reverse ">*/}
+                                <div className="flex flex-row  justify-center">
+                                    <Button
+                                        onClick={() => window.open('https://form.jotform.com/soarteam/waiver', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500')}
+                                        size="lg"
+                                        variant="gradient"
+                                        className="flex flex-row items-center gap-3"
+
+
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12"/>
+                                        </svg>
+
+                                        Fill out the Waiver
+                                    </Button></div>
+                                {/*</div>*/}
+                            </div>
+                                }
                             </div>
                         </Card>
                     </div>
