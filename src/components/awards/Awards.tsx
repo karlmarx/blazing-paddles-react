@@ -32,7 +32,7 @@ let awardTimelineItems: Array<AwardTimelineItemType> = [
         text: "Since the race’s creation in 2001, Blazing Paddles has secured the Coed Division Championship every year it was held except one. Our coed team was the overall winner (beating the men’s teams) in 2006, 2007, 2009, 2010, 2012, 2013, 2015, 2018, 2022 and 2023. Our women’s crew has entered their division twice, taking first place on both occasions.",
     },
     {
-        header: "2010, 2013: MR340",
+        header: "2010, 2013: MR340 (Setting World Record in 2010)",
         location: "Missouri River",
         text: "Known at the time as ‘Beauties ‘n’ Barnacles,’ and with many crew members from places other than Florida, the team completed the MR340, a 340-mile, nonstop race down the Missouri River. In 2010 they set a world record for a dragon boat and placed 3rd overall in a field of more than 200 boats, beating some of the best ultra-marathon paddlers in the world. Along the way they raised funds and awareness for the Shriner’s Hospital in St. Louis, which treats children – free of charge – by virtue of private donations. Blazing Paddles Captain “Iron” Will Murphy and Boatswain Ryan Mason steered and paddled in the effort. The team successfully defended their divisional title in 2013, despite being pinned to a wing dike in fog and darkness for two hours, and losing a teammate to medical disqualification.",
     },
