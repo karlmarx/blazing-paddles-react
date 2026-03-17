@@ -24,7 +24,8 @@ export default function DatePicker() {
     const fetchDates = async() => {
 
         try {
-            const url = "https://us-east1-avian-serenity-393711.cloudfunctions.net/function-1"
+            // Use the local Vercel Serverless Function proxy
+            const url = "/api/ical"
             const response = await axios(url)
 
             //
