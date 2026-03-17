@@ -16,6 +16,7 @@ import axios, {AxiosResponse} from "axios";
 
 export default function DatePicker() {
     const [date, setDate] = React.useState<Date>();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [dates, setDates] = React.useState<Array<any>>([]);
     const [disableDays, setDisabledDays] = React.useState<Array<Matcher>>([]);
     const [month, setMonth] = useState<Date>();
@@ -43,9 +44,9 @@ export default function DatePicker() {
                 // Match logic: Saturday, not past, not vs (race), not CANCEL, and must contain "Holland" (our practice site)
                 if(isSaturday(evDate) && 
                    !isPast(evDate) && 
-                   summary.search(/\svs\s/) == -1 && 
-                   summary.search(/CANCEL/i) == -1 && 
-                   (summary.search(/Holland/i) != -1 || description.search(/Holland/i) != -1)) {
+                   summary.search(/\svs\s/) === -1 && 
+                   summary.search(/CANCEL/i) === -1 && 
+                   (summary.search(/Holland/i) !== -1 || description.search(/Holland/i) !== -1)) {
                     found_dates.push(evDate)
                     found_yeardays.push(getDayOfYear(evDate))
                 }
