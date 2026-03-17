@@ -24,35 +24,30 @@ export default function DatePicker() {
     const fetchDates = async() => {
 
         try {
-            axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
-            const url = "https://classroom-tracker-gu6t24lssq-uk.a.run.app/ical"
+            const url = "https://us-east1-avian-serenity-393711.cloudfunctions.net/function-1"
             const response = await axios(url)
-
-
 
             //
             let jCalData = ICAL.parse(response.data.trim());
-            console.log(jCalData)
             let comp = new ICAL.Component(jCalData);
-            // console.log(comp)
             let vevents = comp.getAllSubcomponents('vevent');
-            console.log(vevents)
             const found_dates = []
             const found_yeardays = []
             for (const vevent of vevents) {
                 var event = new ICAL.Event(vevent);
-                console.log(event)
-                console.log(event.summary, event.uid, event.description, event.startDate.toJSDate())
-                //TODO if summary includes practice adn not cancelled add to available dates
                 const evDate = event.startDate.toJSDate()
-                if(isSaturday(evDate) && !isPast(evDate) && event.summary.search(/\svs\s/) == -1 && event.summary.search(/CANCEL/i) == -1 && event.summary.search(/Holland/i) != -1) {
-                    console.log(event.summary)
-                    console.log("isPractice")
+                const summary = event.summary || "";
+                const description = event.description || "";
+                
+                // Match logic: Saturday, not past, not vs (race), not CANCEL, and must contain "Holland" (our practice site)
+                if(isSaturday(evDate) && 
+                   !isPast(evDate) && 
+                   summary.search(/\svs\s/) == -1 && 
+                   summary.search(/CANCEL/i) == -1 && 
+                   (summary.search(/Holland/i) != -1 || description.search(/Holland/i) != -1)) {
                     found_dates.push(evDate)
                     found_yeardays.push(getDayOfYear(evDate))
                 }
-
             }
             setDates(found_dates)
             setDate(found_dates[0])
