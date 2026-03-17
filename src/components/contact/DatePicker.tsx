@@ -1,4 +1,4 @@
-﻿import React, {EffectCallback, useEffect, useState} from "react";import {
+import React, {EffectCallback, useEffect, useState} from "react";import {
     Input,
     Popover,
     PopoverHandler,
