@@ -1,4 +1,5 @@
-import React, {EffectCallback, useEffect, useState} from "react";import {
+import React, {useEffect, useState} from "react";
+import {
     Input,
     Popover,
     PopoverHandler,
@@ -6,17 +7,15 @@ import React, {EffectCallback, useEffect, useState} from "react";import {
 } from "@material-tailwind/react";
 // @ts-ignore
 import ICAL from "ical.js";
-import {addMonths, endOfYesterday, format, getDate, getDayOfYear, isPast, isSaturday, startOfMonth} from "date-fns";
-import {DateAfter, DayOfWeek, DayPicker, Matcher} from "react-day-picker";
+import {addMonths, format, getDayOfYear, isPast, isSaturday, startOfMonth} from "date-fns";
+import {DayPicker, Matcher} from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
-import axios, {AxiosResponse} from "axios";
+import axios from "axios";
 
 
 
 export default function DatePicker() {
     const [date, setDate] = React.useState<Date>();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [dates, setDates] = React.useState<Array<any>>([]);
     const [disableDays, setDisabledDays] = React.useState<Array<Matcher>>([]);
     const [month, setMonth] = useState<Date>();
     const [loading, setLoading] = useState<boolean>(true);
@@ -28,14 +27,13 @@ export default function DatePicker() {
             const url = "/api/ical"
             const response = await axios(url)
 
-            //
-            let jCalData = ICAL.parse(response.data.trim());     
-            let comp = new ICAL.Component(jCalData);
-            let vevents = comp.getAllSubcomponents('vevent');    
-            const found_dates = []
-            const found_yeardays = []
+            const jCalData = ICAL.parse(response.data.trim());
+            const comp = new ICAL.Component(jCalData);
+            const vevents = comp.getAllSubcomponents('vevent');
+            const found_dates: Date[] = []
+            const found_yeardays: number[] = []
             for (const vevent of vevents) {
-                var event = new ICAL.Event(vevent);
+                const event = new ICAL.Event(vevent);
                 const evDate = event.startDate.toJSDate()        
                 const summary = event.summary || "";
                 const description = event.description || "";     
@@ -50,7 +48,6 @@ export default function DatePicker() {
                     found_yeardays.push(getDayOfYear(evDate))    
                 }
             }
-            setDates(found_dates)
             setDate(found_dates[0])
             setMonth(found_dates[0])
 
@@ -74,7 +71,6 @@ export default function DatePicker() {
 
             setDisabledDays(dates)
             setLoading(false)
-            // console.log(jCalData)
         } catch (err) {
             const date = startOfMonth(new Date())
             const endDate = addMonths(new Date(), 4);
@@ -90,7 +86,6 @@ export default function DatePicker() {
                 date.setDate(date.getDate() + 1);
             }
 
-            console.log(dates);
             console.error(err);
             setDate(found_dates[0])
             setMonth(found_dates[0])
