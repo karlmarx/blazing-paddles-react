@@ -29,6 +29,11 @@ yarn-error.log*
 # Vercel
 .vercel
 
+# Playwright
+/test-results
+/playwright-report
+/playwright/.cache
+
 # Python (for api/)
 __pycache__/
 *.py[cod]
