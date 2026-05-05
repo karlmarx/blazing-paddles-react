@@ -1,0 +1,2 @@
+# Place downloadable files here.
+# These are served through /api/download/[token] and are NOT publicly browsable.
