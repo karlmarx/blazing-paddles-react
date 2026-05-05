@@ -366,7 +366,7 @@ const navListItems = [
         icon: CalendarDaysIcon,
     },
     {
-        label: "Donate",
+        label: "Support Us",
         link: "#/donate",
         icon: GiftIcon,
     },
