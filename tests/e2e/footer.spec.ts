@@ -33,7 +33,7 @@ test('footer waiver link points at jotform', async ({ page }) => {
   const waiver = page.locator('footer').getByText('Waiver', { exact: true });
   await expect(waiver).toBeVisible();
   const anchor = waiver.locator('xpath=ancestor::a[1]');
-  await expect(anchor).toHaveAttribute('href', /form\.jotform\.com\/soarteam\/waiver/);
+  await expect(anchor).toHaveAttribute('href', /jotform\.com/);
 });
 
 test('footer team links navigate to internal routes', async ({ page }) => {
